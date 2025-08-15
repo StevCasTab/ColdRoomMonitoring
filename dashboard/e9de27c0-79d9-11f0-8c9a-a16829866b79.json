@@ -469,7 +469,7 @@
               "tooltipLabelColor" : "rgba(0, 0, 0, 0.76)",
               "tooltipHideZeroValues" : null
             },
-            "title" : "Line chart",
+            "title" : "Room 1",
             "dropShadow" : true,
             "enableFullscreen" : true,
             "titleStyle" : null,
@@ -983,7 +983,7 @@
               "tooltipLabelColor" : "rgba(0, 0, 0, 0.76)",
               "tooltipHideZeroValues" : null
             },
-            "title" : "Line chart",
+            "title" : "Room 2",
             "dropShadow" : true,
             "enableFullscreen" : true,
             "titleStyle" : null,
@@ -1036,7 +1036,202 @@
           "col" : 0,
           "id" : "39ee7af7-0b7d-4247-007d-81d8108b51f5"
         },
-        "617d0230-a1e4-1a73-81c3-05e2034bef32" : {
+        "f60fa095-2869-7a66-fa21-55d3b3b557d4" : {
+          "typeFullFqn" : "system.toggle_button",
+          "type" : "rpc",
+          "sizeX" : 4,
+          "sizeY" : 2,
+          "config" : {
+            "showTitle" : true,
+            "backgroundColor" : "#ffffff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "initialState" : {
+                "action" : "GET_TIME_SERIES",
+                "defaultValue" : false,
+                "executeRpc" : {
+                  "method" : "getState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "getAttribute" : {
+                  "scope" : null,
+                  "key" : "state"
+                },
+                "getTimeSeries" : {
+                  "key" : "compressorstatus"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
+                  "compareToValue" : "On"
+                }
+              },
+              "checkState" : {
+                "action" : "EXECUTE_RPC",
+                "executeRpc" : {
+                  "method" : " ",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "setAttribute" : {
+                  "scope" : "SERVER_SCOPE",
+                  "key" : "state"
+                },
+                "putTimeSeries" : {
+                  "key" : "state"
+                },
+                "valueToData" : {
+                  "type" : "CONSTANT",
+                  "constantValue" : true,
+                  "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */\nreturn value;"
+                }
+              },
+              "uncheckState" : {
+                "action" : "EXECUTE_RPC",
+                "executeRpc" : {
+                  "method" : " ",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "setAttribute" : {
+                  "scope" : "SERVER_SCOPE",
+                  "key" : "state"
+                },
+                "putTimeSeries" : {
+                  "key" : "state"
+                },
+                "valueToData" : {
+                  "type" : "CONSTANT",
+                  "constantValue" : false,
+                  "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */ \n return value;"
+                }
+              },
+              "disabledState" : {
+                "action" : "DO_NOTHING",
+                "defaultValue" : false,
+                "executeRpc" : {
+                  "method" : null,
+                  "requestTimeout" : null,
+                  "requestPersistent" : null,
+                  "persistentPollingInterval" : null
+                },
+                "getAttribute" : {
+                  "scope" : null,
+                  "key" : "state"
+                },
+                "getTimeSeries" : {
+                  "key" : "state"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
+                  "compareToValue" : true
+                }
+              },
+              "autoScale" : true,
+              "horizontalFill" : true,
+              "verticalFill" : false,
+              "checkedAppearance" : {
+                "type" : "basic",
+                "showLabel" : true,
+                "label" : "Open",
+                "showIcon" : true,
+                "icon" : "mdi:door-open",
+                "iconSize" : 24,
+                "iconSizeUnit" : "px",
+                "mainColor" : "#198038",
+                "backgroundColor" : "#4CAF50",
+                "borderRadius" : "0px",
+                "customStyle" : {
+                  "enabled" : null,
+                  "hovered" : null,
+                  "pressed" : null,
+                  "activated" : null,
+                  "disabled" : null
+                }
+              },
+              "uncheckedAppearance" : {
+                "type" : "filled",
+                "showLabel" : true,
+                "label" : "Closed",
+                "showIcon" : true,
+                "icon" : "sensor_door",
+                "iconSize" : 24,
+                "iconSizeUnit" : "px",
+                "mainColor" : "#D1273000",
+                "backgroundColor" : "#FFFFFF",
+                "borderRadius" : "4px",
+                "customStyle" : {
+                  "enabled" : null,
+                  "hovered" : null,
+                  "pressed" : null,
+                  "activated" : null,
+                  "disabled" : null
+                }
+              },
+              "background" : {
+                "type" : "color",
+                "color" : "#fff",
+                "overlay" : {
+                  "enabled" : false,
+                  "color" : "rgba(255,255,255,0.72)",
+                  "blur" : 3
+                }
+              },
+              "padding" : "12px"
+            },
+            "title" : "Door 1",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "widgetCss" : "",
+            "noDataDisplayMessage" : "",
+            "titleFont" : {
+              "size" : 16,
+              "sizeUnit" : "px",
+              "family" : "Roboto",
+              "weight" : "500",
+              "style" : null,
+              "lineHeight" : "1.6"
+            },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "pageSize" : 1024,
+            "titleIcon" : "home",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "configMode" : "basic",
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "d559e96e-e510-8f65-9bae-164a598db19c"
+            },
+            "titleColor" : null,
+            "borderRadius" : null,
+            "datasources" : [ ]
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "f60fa095-2869-7a66-fa21-55d3b3b557d4"
+        },
+        "01b8e337-6bd5-775d-0906-41a3c9e01222" : {
           "typeFullFqn" : "system.status_widget",
           "type" : "rpc",
           "sizeX" : 2,
@@ -1061,7 +1256,7 @@
                   "key" : "state"
                 },
                 "getTimeSeries" : {
-                  "key" : "doorstatus"
+                  "key" : "compressorstatus"
                 },
                 "getAlarmStatus" : {
                   "severityList" : null,
@@ -1070,7 +1265,7 @@
                 "dataToValue" : {
                   "type" : "NONE",
                   "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
-                  "compareToValue" : "Open"
+                  "compareToValue" : "On"
                 }
               },
               "disabledState" : {
@@ -1096,7 +1291,7 @@
               "layout" : "default",
               "onState" : {
                 "showLabel" : true,
-                "label" : "Door 1",
+                "label" : "Compressor 1",
                 "labelFont" : {
                   "family" : "Roboto",
                   "size" : 12,
@@ -1106,7 +1301,7 @@
                   "lineHeight" : "16px"
                 },
                 "showStatus" : true,
-                "status" : "Opened",
+                "status" : "Running",
                 "statusFont" : {
                   "family" : "Roboto",
                   "size" : 10,
@@ -1115,14 +1310,15 @@
                   "weight" : "500",
                   "lineHeight" : "20px"
                 },
-                "icon" : "mdi:door-open",
+                "icon" : "aod",
                 "iconSize" : 32,
                 "iconSizeUnit" : "px",
                 "primaryColor" : "#fff",
                 "secondaryColor" : "rgba(255, 255, 255, 0.80)",
                 "background" : {
                   "type" : "color",
-                  "color" : "var(--tb-primary-500)",
+                  "imageUrl" : null,
+                  "color" : "var(--tb-primary-A700)",
                   "overlay" : {
                     "enabled" : false,
                     "color" : "rgba(255,255,255,0.72)",
@@ -1143,7 +1339,7 @@
               },
               "offState" : {
                 "showLabel" : true,
-                "label" : "Door 1",
+                "label" : "Compressor 1",
                 "labelFont" : {
                   "family" : "Roboto",
                   "size" : 12,
@@ -1153,7 +1349,7 @@
                   "lineHeight" : "16px"
                 },
                 "showStatus" : true,
-                "status" : "Closed",
+                "status" : "Stopped",
                 "statusFont" : {
                   "family" : "Roboto",
                   "size" : 10,
@@ -1162,14 +1358,15 @@
                   "weight" : "500",
                   "lineHeight" : "20px"
                 },
-                "icon" : "sensor_door",
+                "icon" : "phone_android",
                 "iconSize" : 32,
                 "iconSizeUnit" : "px",
                 "primaryColor" : "rgba(0, 0, 0, 0.87)",
                 "secondaryColor" : "rgba(0, 0, 0, 0.54)",
                 "background" : {
                   "type" : "color",
-                  "color" : "#FFF",
+                  "imageUrl" : null,
+                  "color" : "#3F0703",
                   "overlay" : {
                     "enabled" : false,
                     "color" : "rgba(255,255,255,0.72)",
@@ -1226,9 +1423,9 @@
           },
           "row" : 0,
           "col" : 0,
-          "id" : "617d0230-a1e4-1a73-81c3-05e2034bef32"
+          "id" : "01b8e337-6bd5-775d-0906-41a3c9e01222"
         },
-        "05e8a5a6-b1cd-2a5b-487d-9e9c70a7ddaa" : {
+        "00f6ae20-5608-e2d3-1121-beb923a711f1" : {
           "typeFullFqn" : "system.status_widget",
           "type" : "rpc",
           "sizeX" : 2,
@@ -1253,7 +1450,7 @@
                   "key" : "state"
                 },
                 "getTimeSeries" : {
-                  "key" : "doorstatus"
+                  "key" : "compressorstatus"
                 },
                 "getAlarmStatus" : {
                   "severityList" : null,
@@ -1262,7 +1459,7 @@
                 "dataToValue" : {
                   "type" : "NONE",
                   "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
-                  "compareToValue" : "Open"
+                  "compareToValue" : "On"
                 }
               },
               "disabledState" : {
@@ -1288,7 +1485,7 @@
               "layout" : "default",
               "onState" : {
                 "showLabel" : true,
-                "label" : "Door 2",
+                "label" : "Compressor 2",
                 "labelFont" : {
                   "family" : "Roboto",
                   "size" : 12,
@@ -1298,7 +1495,7 @@
                   "lineHeight" : "16px"
                 },
                 "showStatus" : true,
-                "status" : "Opened",
+                "status" : "Running",
                 "statusFont" : {
                   "family" : "Roboto",
                   "size" : 10,
@@ -1307,14 +1504,15 @@
                   "weight" : "500",
                   "lineHeight" : "20px"
                 },
-                "icon" : "mdi:door-open",
+                "icon" : "aod",
                 "iconSize" : 32,
                 "iconSizeUnit" : "px",
                 "primaryColor" : "#fff",
                 "secondaryColor" : "rgba(255, 255, 255, 0.80)",
                 "background" : {
                   "type" : "color",
-                  "color" : "var(--tb-primary-500)",
+                  "imageUrl" : null,
+                  "color" : "var(--tb-primary-A700)",
                   "overlay" : {
                     "enabled" : false,
                     "color" : "rgba(255,255,255,0.72)",
@@ -1335,7 +1533,7 @@
               },
               "offState" : {
                 "showLabel" : true,
-                "label" : "Door 2",
+                "label" : "Compressor 2",
                 "labelFont" : {
                   "family" : "Roboto",
                   "size" : 12,
@@ -1345,7 +1543,7 @@
                   "lineHeight" : "16px"
                 },
                 "showStatus" : true,
-                "status" : "Closed",
+                "status" : "Stopped",
                 "statusFont" : {
                   "family" : "Roboto",
                   "size" : 10,
@@ -1354,14 +1552,15 @@
                   "weight" : "500",
                   "lineHeight" : "20px"
                 },
-                "icon" : "sensor_door",
+                "icon" : "phone_android",
                 "iconSize" : 32,
                 "iconSizeUnit" : "px",
                 "primaryColor" : "rgba(0, 0, 0, 0.87)",
                 "secondaryColor" : "rgba(0, 0, 0, 0.54)",
                 "background" : {
                   "type" : "color",
-                  "color" : "#FFF",
+                  "imageUrl" : null,
+                  "color" : "#3F0703",
                   "overlay" : {
                     "enabled" : false,
                     "color" : "rgba(255,255,255,0.72)",
@@ -1410,6 +1609,201 @@
             "configMode" : "basic",
             "targetDevice" : {
               "type" : "entity",
+              "entityAliasId" : "d559e96e-e510-8f65-9bae-164a598db19c"
+            },
+            "titleColor" : null,
+            "borderRadius" : null,
+            "datasources" : [ ]
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "00f6ae20-5608-e2d3-1121-beb923a711f1"
+        },
+        "bf9324b6-da9c-2498-4ec9-b6ed7aefd860" : {
+          "typeFullFqn" : "system.toggle_button",
+          "type" : "rpc",
+          "sizeX" : 4,
+          "sizeY" : 2,
+          "config" : {
+            "showTitle" : true,
+            "backgroundColor" : "#ffffff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "initialState" : {
+                "action" : "GET_TIME_SERIES",
+                "defaultValue" : false,
+                "executeRpc" : {
+                  "method" : "getState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "getAttribute" : {
+                  "scope" : null,
+                  "key" : "state"
+                },
+                "getTimeSeries" : {
+                  "key" : "compressorstatus"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
+                  "compareToValue" : "On"
+                }
+              },
+              "checkState" : {
+                "action" : "EXECUTE_RPC",
+                "executeRpc" : {
+                  "method" : " ",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "setAttribute" : {
+                  "scope" : "SERVER_SCOPE",
+                  "key" : "state"
+                },
+                "putTimeSeries" : {
+                  "key" : "state"
+                },
+                "valueToData" : {
+                  "type" : "CONSTANT",
+                  "constantValue" : true,
+                  "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */\nreturn value;"
+                }
+              },
+              "uncheckState" : {
+                "action" : "EXECUTE_RPC",
+                "executeRpc" : {
+                  "method" : " ",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "setAttribute" : {
+                  "scope" : "SERVER_SCOPE",
+                  "key" : "state"
+                },
+                "putTimeSeries" : {
+                  "key" : "state"
+                },
+                "valueToData" : {
+                  "type" : "CONSTANT",
+                  "constantValue" : false,
+                  "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */ \n return value;"
+                }
+              },
+              "disabledState" : {
+                "action" : "DO_NOTHING",
+                "defaultValue" : false,
+                "executeRpc" : {
+                  "method" : null,
+                  "requestTimeout" : null,
+                  "requestPersistent" : null,
+                  "persistentPollingInterval" : null
+                },
+                "getAttribute" : {
+                  "scope" : null,
+                  "key" : "state"
+                },
+                "getTimeSeries" : {
+                  "key" : "state"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
+                  "compareToValue" : true
+                }
+              },
+              "autoScale" : true,
+              "horizontalFill" : true,
+              "verticalFill" : false,
+              "checkedAppearance" : {
+                "type" : "basic",
+                "showLabel" : true,
+                "label" : "Open",
+                "showIcon" : true,
+                "icon" : "mdi:door-open",
+                "iconSize" : 24,
+                "iconSizeUnit" : "px",
+                "mainColor" : "#198038",
+                "backgroundColor" : "#4CAF50",
+                "borderRadius" : "0px",
+                "customStyle" : {
+                  "enabled" : null,
+                  "hovered" : null,
+                  "pressed" : null,
+                  "activated" : null,
+                  "disabled" : null
+                }
+              },
+              "uncheckedAppearance" : {
+                "type" : "filled",
+                "showLabel" : true,
+                "label" : "Closed",
+                "showIcon" : true,
+                "icon" : "sensor_door",
+                "iconSize" : 24,
+                "iconSizeUnit" : "px",
+                "mainColor" : "#D1273000",
+                "backgroundColor" : "#FFFFFF",
+                "borderRadius" : "4px",
+                "customStyle" : {
+                  "enabled" : null,
+                  "hovered" : null,
+                  "pressed" : null,
+                  "activated" : null,
+                  "disabled" : null
+                }
+              },
+              "background" : {
+                "type" : "color",
+                "color" : "#fff",
+                "overlay" : {
+                  "enabled" : false,
+                  "color" : "rgba(255,255,255,0.72)",
+                  "blur" : 3
+                }
+              },
+              "padding" : "12px"
+            },
+            "title" : "Door 2",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "widgetCss" : "",
+            "noDataDisplayMessage" : "",
+            "titleFont" : {
+              "size" : 16,
+              "sizeUnit" : "px",
+              "family" : "Roboto",
+              "weight" : "500",
+              "style" : null,
+              "lineHeight" : "1.6"
+            },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "pageSize" : 1024,
+            "titleIcon" : "home",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "configMode" : "basic",
+            "targetDevice" : {
+              "type" : "entity",
               "entityAliasId" : "25a1e4d9-6a0d-76a7-8f62-1db950008db4"
             },
             "titleColor" : null,
@@ -1418,7 +1812,7 @@
           },
           "row" : 0,
           "col" : 0,
-          "id" : "05e8a5a6-b1cd-2a5b-487d-9e9c70a7ddaa"
+          "id" : "bf9324b6-da9c-2498-4ec9-b6ed7aefd860"
         }
       },
       "states" : {
@@ -1429,30 +1823,42 @@
             "main" : {
               "widgets" : {
                 "d7fb4963-2b3e-5e22-6abd-06f775991525" : {
-                  "sizeX" : 9,
+                  "sizeX" : 11,
                   "sizeY" : 6,
                   "mobileHeight" : null,
                   "row" : 0,
                   "col" : 0
                 },
                 "39ee7af7-0b7d-4247-007d-81d8108b51f5" : {
-                  "sizeX" : 9,
+                  "sizeX" : 12,
                   "sizeY" : 6,
                   "mobileHeight" : null,
                   "row" : 0,
-                  "col" : 15
+                  "col" : 12
                 },
-                "617d0230-a1e4-1a73-81c3-05e2034bef32" : {
+                "f60fa095-2869-7a66-fa21-55d3b3b557d4" : {
                   "sizeX" : 2,
                   "sizeY" : 2,
                   "row" : 6,
-                  "col" : 5
+                  "col" : 9
                 },
-                "05e8a5a6-b1cd-2a5b-487d-9e9c70a7ddaa" : {
+                "01b8e337-6bd5-775d-0906-41a3c9e01222" : {
+                  "sizeX" : 2,
+                  "sizeY" : 2,
+                  "row" : 6,
+                  "col" : 7
+                },
+                "00f6ae20-5608-e2d3-1121-beb923a711f1" : {
                   "sizeX" : 2,
                   "sizeY" : 2,
                   "row" : 6,
                   "col" : 20
+                },
+                "bf9324b6-da9c-2498-4ec9-b6ed7aefd860" : {
+                  "sizeX" : 2,
+                  "sizeY" : 2,
+                  "row" : 6,
+                  "col" : 22
                 }
               },
               "gridSettings" : {
@@ -1461,7 +1867,14 @@
                 "columns" : 24,
                 "margin" : 10,
                 "outerMargin" : true,
-                "backgroundSizeMode" : "100%"
+                "backgroundSizeMode" : "cover",
+                "minColumns" : 24,
+                "viewFormat" : "grid",
+                "autoFillHeight" : true,
+                "rowHeight" : 70,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : false,
+                "mobileRowHeight" : 70
               }
             }
           }
