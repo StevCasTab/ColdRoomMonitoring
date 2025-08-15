@@ -8,8 +8,8 @@
     "configuration" : {
       "description" : "",
       "widgets" : {
-        "3cb92bcf-48fd-fda4-617a-a8493b7d03ec" : {
-          "typeFullFqn" : "system.time_series_chart",
+        "d7fb4963-2b3e-5e22-6abd-06f775991525" : {
+          "typeFullFqn" : "system.line_chart",
           "type" : "timeseries",
           "sizeX" : 8,
           "sizeY" : 5,
@@ -92,8 +92,85 @@
                     "color" : ""
                   }
                 },
-                "_hash" : 0.44612321905605445,
+                "_hash" : 0.5673816159975651,
                 "units" : "°C",
+                "decimals" : 0
+              }, {
+                "name" : "humidity",
+                "type" : "timeseries",
+                "label" : "Humidity",
+                "color" : "#4caf50",
+                "settings" : {
+                  "yAxisId" : "default",
+                  "showInLegend" : true,
+                  "dataHiddenByDefault" : false,
+                  "type" : "line",
+                  "lineSettings" : {
+                    "showLine" : true,
+                    "step" : false,
+                    "stepType" : "start",
+                    "smooth" : false,
+                    "lineType" : "solid",
+                    "lineWidth" : 2,
+                    "showPoints" : false,
+                    "showPointLabel" : false,
+                    "pointLabelPosition" : "top",
+                    "pointLabelFont" : {
+                      "family" : "Roboto",
+                      "size" : 11,
+                      "sizeUnit" : "px",
+                      "style" : "normal",
+                      "weight" : "400",
+                      "lineHeight" : "1"
+                    },
+                    "pointLabelColor" : "rgba(0, 0, 0, 0.76)",
+                    "enablePointLabelBackground" : false,
+                    "pointLabelBackground" : "rgba(255,255,255,0.56)",
+                    "pointShape" : "emptyCircle",
+                    "pointSize" : 4,
+                    "fillAreaSettings" : {
+                      "type" : "none",
+                      "opacity" : 0.4,
+                      "gradient" : {
+                        "start" : 100,
+                        "end" : 0
+                      }
+                    }
+                  },
+                  "barSettings" : {
+                    "showBorder" : false,
+                    "borderWidth" : 2,
+                    "borderRadius" : 0,
+                    "showLabel" : false,
+                    "labelPosition" : "top",
+                    "labelFont" : {
+                      "family" : "Roboto",
+                      "size" : 11,
+                      "sizeUnit" : "px",
+                      "style" : "normal",
+                      "weight" : "400",
+                      "lineHeight" : "1"
+                    },
+                    "labelColor" : "rgba(0, 0, 0, 0.76)",
+                    "enableLabelBackground" : false,
+                    "labelBackground" : "rgba(255,255,255,0.56)",
+                    "backgroundSettings" : {
+                      "type" : "none",
+                      "opacity" : 0.4,
+                      "gradient" : {
+                        "start" : 100,
+                        "end" : 0
+                      }
+                    }
+                  },
+                  "comparisonSettings" : {
+                    "showValuesForComparison" : false,
+                    "comparisonValuesLabel" : "",
+                    "color" : ""
+                  }
+                },
+                "_hash" : 0.10360231759034044,
+                "units" : "%",
                 "decimals" : 0
               } ],
               "alarmFilterConfig" : {
@@ -392,7 +469,7 @@
               "tooltipLabelColor" : "rgba(0, 0, 0, 0.76)",
               "tooltipHideZeroValues" : null
             },
-            "title" : "Time series chart",
+            "title" : "Line chart",
             "dropShadow" : true,
             "enableFullscreen" : true,
             "titleStyle" : null,
@@ -443,10 +520,10 @@
           },
           "row" : 0,
           "col" : 0,
-          "id" : "3cb92bcf-48fd-fda4-617a-a8493b7d03ec"
+          "id" : "d7fb4963-2b3e-5e22-6abd-06f775991525"
         },
-        "47a07218-36fb-ed79-794f-90689a08f01a" : {
-          "typeFullFqn" : "system.time_series_chart",
+        "39ee7af7-0b7d-4247-007d-81d8108b51f5" : {
+          "typeFullFqn" : "system.line_chart",
           "type" : "timeseries",
           "sizeX" : 8,
           "sizeY" : 5,
@@ -529,8 +606,85 @@
                     "color" : ""
                   }
                 },
-                "_hash" : 0.44612321905605445,
+                "_hash" : 0.5673816159975651,
                 "units" : "°C",
+                "decimals" : 0
+              }, {
+                "name" : "humidity",
+                "type" : "timeseries",
+                "label" : "Humidity",
+                "color" : "#4caf50",
+                "settings" : {
+                  "yAxisId" : "default",
+                  "showInLegend" : true,
+                  "dataHiddenByDefault" : false,
+                  "type" : "line",
+                  "lineSettings" : {
+                    "showLine" : true,
+                    "step" : false,
+                    "stepType" : "start",
+                    "smooth" : false,
+                    "lineType" : "solid",
+                    "lineWidth" : 2,
+                    "showPoints" : false,
+                    "showPointLabel" : false,
+                    "pointLabelPosition" : "top",
+                    "pointLabelFont" : {
+                      "family" : "Roboto",
+                      "size" : 11,
+                      "sizeUnit" : "px",
+                      "style" : "normal",
+                      "weight" : "400",
+                      "lineHeight" : "1"
+                    },
+                    "pointLabelColor" : "rgba(0, 0, 0, 0.76)",
+                    "enablePointLabelBackground" : false,
+                    "pointLabelBackground" : "rgba(255,255,255,0.56)",
+                    "pointShape" : "emptyCircle",
+                    "pointSize" : 4,
+                    "fillAreaSettings" : {
+                      "type" : "none",
+                      "opacity" : 0.4,
+                      "gradient" : {
+                        "start" : 100,
+                        "end" : 0
+                      }
+                    }
+                  },
+                  "barSettings" : {
+                    "showBorder" : false,
+                    "borderWidth" : 2,
+                    "borderRadius" : 0,
+                    "showLabel" : false,
+                    "labelPosition" : "top",
+                    "labelFont" : {
+                      "family" : "Roboto",
+                      "size" : 11,
+                      "sizeUnit" : "px",
+                      "style" : "normal",
+                      "weight" : "400",
+                      "lineHeight" : "1"
+                    },
+                    "labelColor" : "rgba(0, 0, 0, 0.76)",
+                    "enableLabelBackground" : false,
+                    "labelBackground" : "rgba(255,255,255,0.56)",
+                    "backgroundSettings" : {
+                      "type" : "none",
+                      "opacity" : 0.4,
+                      "gradient" : {
+                        "start" : 100,
+                        "end" : 0
+                      }
+                    }
+                  },
+                  "comparisonSettings" : {
+                    "showValuesForComparison" : false,
+                    "comparisonValuesLabel" : "",
+                    "color" : ""
+                  }
+                },
+                "_hash" : 0.10360231759034044,
+                "units" : "%",
                 "decimals" : 0
               } ],
               "alarmFilterConfig" : {
@@ -829,7 +983,7 @@
               "tooltipLabelColor" : "rgba(0, 0, 0, 0.76)",
               "tooltipHideZeroValues" : null
             },
-            "title" : "Time series chart",
+            "title" : "Line chart",
             "dropShadow" : true,
             "enableFullscreen" : true,
             "titleStyle" : null,
@@ -880,7 +1034,7 @@
           },
           "row" : 0,
           "col" : 0,
-          "id" : "47a07218-36fb-ed79-794f-90689a08f01a"
+          "id" : "39ee7af7-0b7d-4247-007d-81d8108b51f5"
         }
       },
       "states" : {
@@ -890,19 +1044,19 @@
           "layouts" : {
             "main" : {
               "widgets" : {
-                "3cb92bcf-48fd-fda4-617a-a8493b7d03ec" : {
+                "d7fb4963-2b3e-5e22-6abd-06f775991525" : {
                   "sizeX" : 9,
                   "sizeY" : 6,
                   "mobileHeight" : null,
                   "row" : 0,
                   "col" : 0
                 },
-                "47a07218-36fb-ed79-794f-90689a08f01a" : {
-                  "sizeX" : 10,
+                "39ee7af7-0b7d-4247-007d-81d8108b51f5" : {
+                  "sizeX" : 9,
                   "sizeY" : 6,
                   "mobileHeight" : null,
                   "row" : 0,
-                  "col" : 14
+                  "col" : 15
                 }
               },
               "gridSettings" : {
