@@ -42,7 +42,7 @@
       "type" : "Post telemetry"
     }, {
       "fromIndex" : 3,
-      "toIndex" : 12,
+      "toIndex" : 11,
       "type" : "Post telemetry"
     }, {
       "fromIndex" : 5,
@@ -54,30 +54,26 @@
       "type" : "Success"
     }, {
       "fromIndex" : 8,
-      "toIndex" : 9,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 9,
-      "toIndex" : 11,
+      "toIndex" : 10,
       "type" : "True"
     }, {
-      "fromIndex" : 10,
+      "fromIndex" : 9,
       "toIndex" : 3,
       "type" : "Success"
     }, {
-      "fromIndex" : 12,
+      "fromIndex" : 11,
       "toIndex" : 5,
       "type" : "Failure"
     }, {
-      "fromIndex" : 12,
-      "toIndex" : 13,
+      "fromIndex" : 11,
+      "toIndex" : 12,
       "type" : "Success"
     }, {
-      "fromIndex" : 13,
+      "fromIndex" : 12,
       "toIndex" : 5,
       "type" : "True"
     } ],
-    "firstNodeIndex" : 10,
+    "firstNodeIndex" : 9,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : "",
@@ -279,37 +275,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 805,
-        "layoutY" : 446
-      },
-      "configuration" : {
-        "useMetadataPeriodInSecondsPatterns" : false,
-        "periodInSeconds" : 120,
-        "periodInSecondsPattern" : null,
-        "maxPendingMsgs" : 1000
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 1755352757666,
-        "failuresEnabled" : false
-      },
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "0f68bc00-7aa5-11f0-8c9a-a16829866b79"
-      },
-      "name" : "Wait 2 Minutes",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.delay.TbMsgDelayNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 1065,
-        "layoutY" : 446
+        "layoutX" : 793,
+        "layoutY" : 413
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -340,13 +307,13 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1323,
-        "layoutY" : 449
+        "layoutX" : 1049,
+        "layoutY" : 416
       },
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return msg.temperature > 20;",
-        "tbelScript" : "var currentDate = new Date();\nvar currentTime = currentDate.getTime();\n\nvar checkTime = (currentTime - metadata.ss_timestamp) > 119000;\n\nreturn checkTime === true && msg.doorstatus === \"Open\" && metadata.ss_doorstatus === \"Open\";\n"
+        "tbelScript" : "var currentDate = new Date();\nvar currentTime = currentDate.getTime();\n\nvar checkTime = (currentTime - metadata.ss_timestamp) > 120000;\n\nreturn checkTime === true && msg.doorstatus === \"Open\" && metadata.ss_doorstatus === \"Open\";\n"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -396,8 +363,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1549,
-        "layoutY" : 447
+        "layoutX" : 1277,
+        "layoutY" : 414
       },
       "configuration" : {
         "scriptLang" : "TBEL",
