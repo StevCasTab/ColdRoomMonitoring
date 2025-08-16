@@ -9,7 +9,7 @@
     "externalId" : null,
     "firstRuleNodeId" : {
       "entityType" : "RULE_NODE",
-      "id" : "889bdfa0-7aa3-11f0-8c9a-a16829866b79"
+      "id" : "d8331650-7aa3-11f0-9079-cfcbff2a611d"
     },
     "id" : {
       "entityType" : "RULE_CHAIN",
@@ -24,13 +24,25 @@
       "fromIndex" : 0,
       "toIndex" : 1,
       "type" : "True"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 4,
+      "type" : "True"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 0,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 2,
+      "type" : "Post telemetry"
     } ],
-    "firstNodeIndex" : 0,
+    "firstNodeIndex" : 3,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 295,
-        "layoutY" : 88
+        "layoutX" : 553,
+        "layoutY" : 95
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -53,8 +65,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 563,
-        "layoutY" : 88
+        "layoutX" : 808,
+        "layoutY" : 92
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -80,6 +92,86 @@
         "id" : "889bdfa1-7aa3-11f0-8c9a-a16829866b79"
       },
       "name" : "Temperature Alarm",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 554,
+        "layoutY" : 155
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return msg.temperature > 20;",
+        "tbelScript" : "return msg.humidity > 85;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d832ef40-7aa3-11f0-9079-cfcbff2a611d"
+      },
+      "name" : "Humidity Threshold",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 266,
+        "layoutY" : 152
+      },
+      "configuration" : {
+        "version" : 0
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d8331650-7aa3-11f0-9079-cfcbff2a611d"
+      },
+      "name" : "Message Type Switch",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 807,
+        "layoutY" : 155
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "useMessageAlarmData" : false,
+        "overwriteAlarmDetails" : false,
+        "alarmType" : "Humidity High",
+        "severity" : "CRITICAL",
+        "propagate" : false,
+        "relationTypes" : [ ],
+        "propagateToOwner" : false,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false,
+        "dynamicSeverity" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d8333d60-7aa3-11f0-9079-cfcbff2a611d"
+      },
+      "name" : "Humidity Alarm",
       "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
