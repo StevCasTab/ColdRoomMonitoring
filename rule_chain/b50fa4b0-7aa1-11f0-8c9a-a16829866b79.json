@@ -9,7 +9,7 @@
     "externalId" : null,
     "firstRuleNodeId" : {
       "entityType" : "RULE_NODE",
-      "id" : "d8331650-7aa3-11f0-9079-cfcbff2a611d"
+      "id" : "855e4400-7aa7-11f0-8c9a-a16829866b79"
     },
     "id" : {
       "entityType" : "RULE_CHAIN",
@@ -36,13 +36,53 @@
       "fromIndex" : 3,
       "toIndex" : 2,
       "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 7,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 12,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 6,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 8,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 8,
+      "toIndex" : 9,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 11,
+      "type" : "True"
+    }, {
+      "fromIndex" : 10,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 12,
+      "toIndex" : 5,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 12,
+      "toIndex" : 13,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 13,
+      "toIndex" : 5,
+      "type" : "True"
     } ],
-    "firstNodeIndex" : 3,
+    "firstNodeIndex" : 10,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 553,
-        "layoutY" : 95
+        "layoutX" : 827,
+        "layoutY" : 91
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -65,8 +105,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 808,
-        "layoutY" : 92
+        "layoutX" : 1082,
+        "layoutY" : 88
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -99,8 +139,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 554,
-        "layoutY" : 155
+        "layoutX" : 828,
+        "layoutY" : 151
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -123,8 +163,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 266,
-        "layoutY" : 152
+        "layoutX" : 540,
+        "layoutY" : 148
       },
       "configuration" : {
         "version" : 0
@@ -145,8 +185,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 807,
-        "layoutY" : 155
+        "layoutX" : 1081,
+        "layoutY" : 151
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -176,6 +216,277 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1217,
+        "layoutY" : 242
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var currentDateTime = new Date();\nvar timeStamp = currentDateTime.getTime();\n\nreturn {msg: { doorstatus: msg.doorstatus, \"timestamp\": timeStamp}, metadata: { savedDoorStatus: msg.doorstatus, savedTimeStamp: timeStamp}, msgType: 'POST_ATTRIBUTES_REQUEST'};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1755355227560,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0f6894f0-7aa5-11f0-8c9a-a16829866b79"
+      },
+      "name" : "Save Door Status",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1500,
+        "layoutY" : 241
+      },
+      "configuration" : {
+        "processingSettings" : {
+          "type" : "ON_EVERY_MESSAGE"
+        },
+        "scope" : "SERVER_SCOPE",
+        "notifyDevice" : false,
+        "sendAttributesUpdatedNotification" : false,
+        "updateAttributesOnlyOnValueChange" : false
+      },
+      "configurationVersion" : 3,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1755355227560,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0f6894f1-7aa5-11f0-8c9a-a16829866b79"
+      },
+      "name" : "Save Door Status To Attributes",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 805,
+        "layoutY" : 446
+      },
+      "configuration" : {
+        "useMetadataPeriodInSecondsPatterns" : false,
+        "periodInSeconds" : 120,
+        "periodInSecondsPattern" : null,
+        "maxPendingMsgs" : 1000
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1755352757666,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0f68bc00-7aa5-11f0-8c9a-a16829866b79"
+      },
+      "name" : "Wait 2 Minutes",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.delay.TbMsgDelayNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1065,
+        "layoutY" : 446
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchTo" : "METADATA",
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "doorstatus", "timestamp" ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : false
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1755352757666,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b3e31950-7aa6-11f0-8c9a-a16829866b79"
+      },
+      "name" : "Retrieve Saved Door Status",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1323,
+        "layoutY" : 449
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return msg.temperature > 20;",
+        "tbelScript" : "var currentDate = new Date();\nvar currentTime = currentDate.getTime();\n\nvar checkTime = (currentTime - metadata.ss_timestamp) > 119000;\n\nreturn checkTime === true && msg.doorstatus === \"Open\" && metadata.ss_doorstatus === \"Open\";\n"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1755359663436,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b3e31951-7aa6-11f0-8c9a-a16829866b79"
+      },
+      "name" : "Check Door Status",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 278,
+        "layoutY" : 149
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: {\"temperature\" : msg.temperature, \"humidity\" : msg.humidity, \"doorstatus\" : msg.doorstatus}, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1755352936416,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "855e4400-7aa7-11f0-8c9a-a16829866b79"
+      },
+      "name" : "Get Required Values",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1549,
+        "layoutY" : 447
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "useMessageAlarmData" : false,
+        "overwriteAlarmDetails" : false,
+        "alarmType" : "Door Left Open",
+        "severity" : "CRITICAL",
+        "propagate" : false,
+        "relationTypes" : [ ],
+        "propagateToOwner" : false,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false,
+        "dynamicSeverity" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e577a2d0-7aa9-11f0-8c9a-a16829866b79"
+      },
+      "name" : "Door Alarm",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 781,
+        "layoutY" : 236
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchTo" : "METADATA",
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "doorstatus" ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : false
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1755355227560,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e577a2d1-7aa9-11f0-8c9a-a16829866b79"
+      },
+      "name" : "Retrieve Saved Door Status",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 995,
+        "layoutY" : 324
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return msg.temperature > 20;",
+        "tbelScript" : "return msg.doorstatus != metadata.ss_doorstatus;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1755356642613,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e577a2d2-7aa9-11f0-8c9a-a16829866b79"
+      },
+      "name" : "Saved Door Status check",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
     } ],
     "ruleChainConnections" : null
   }
