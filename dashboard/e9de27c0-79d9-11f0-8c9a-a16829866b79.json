@@ -1007,401 +1007,6 @@
           "col" : 0,
           "id" : "39ee7af7-0b7d-4247-007d-81d8108b51f5"
         },
-        "f60fa095-2869-7a66-fa21-55d3b3b557d4" : {
-          "typeFullFqn" : "system.toggle_button",
-          "type" : "rpc",
-          "sizeX" : 4,
-          "sizeY" : 2,
-          "config" : {
-            "showTitle" : true,
-            "backgroundColor" : "#ffffff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0px",
-            "settings" : {
-              "initialState" : {
-                "action" : "GET_TIME_SERIES",
-                "defaultValue" : false,
-                "executeRpc" : {
-                  "method" : "getState",
-                  "requestTimeout" : 5000,
-                  "requestPersistent" : false,
-                  "persistentPollingInterval" : 1000
-                },
-                "getAttribute" : {
-                  "scope" : null,
-                  "key" : "state"
-                },
-                "getTimeSeries" : {
-                  "key" : "doorstatus"
-                },
-                "getAlarmStatus" : {
-                  "severityList" : null,
-                  "typeList" : null
-                },
-                "dataToValue" : {
-                  "type" : "NONE",
-                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
-                  "compareToValue" : "Open"
-                }
-              },
-              "checkState" : {
-                "action" : "EXECUTE_RPC",
-                "executeRpc" : {
-                  "method" : " ",
-                  "requestTimeout" : 5000,
-                  "requestPersistent" : false,
-                  "persistentPollingInterval" : 1000
-                },
-                "setAttribute" : {
-                  "key" : "state",
-                  "scope" : "SERVER_SCOPE"
-                },
-                "putTimeSeries" : {
-                  "key" : "state"
-                },
-                "valueToData" : {
-                  "type" : "CONSTANT",
-                  "constantValue" : true,
-                  "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */\nreturn value;"
-                }
-              },
-              "uncheckState" : {
-                "action" : "EXECUTE_RPC",
-                "executeRpc" : {
-                  "method" : " ",
-                  "requestTimeout" : 5000,
-                  "requestPersistent" : false,
-                  "persistentPollingInterval" : 1000
-                },
-                "setAttribute" : {
-                  "key" : "state",
-                  "scope" : "SERVER_SCOPE"
-                },
-                "putTimeSeries" : {
-                  "key" : "state"
-                },
-                "valueToData" : {
-                  "type" : "CONSTANT",
-                  "constantValue" : false,
-                  "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */ \n return value;"
-                }
-              },
-              "disabledState" : {
-                "action" : "DO_NOTHING",
-                "defaultValue" : false,
-                "getAttribute" : {
-                  "key" : "state",
-                  "scope" : null
-                },
-                "getTimeSeries" : {
-                  "key" : "state"
-                },
-                "getAlarmStatus" : {
-                  "severityList" : null,
-                  "typeList" : null
-                },
-                "dataToValue" : {
-                  "type" : "NONE",
-                  "compareToValue" : true,
-                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
-                },
-                "executeRpc" : {
-                  "method" : null,
-                  "requestTimeout" : null,
-                  "requestPersistent" : null,
-                  "persistentPollingInterval" : null
-                }
-              },
-              "autoScale" : true,
-              "horizontalFill" : true,
-              "verticalFill" : false,
-              "checkedAppearance" : {
-                "type" : "basic",
-                "autoScale" : true,
-                "showLabel" : true,
-                "label" : "Open",
-                "showIcon" : true,
-                "icon" : "mdi:door-open",
-                "iconSize" : 24,
-                "iconSizeUnit" : "px",
-                "mainColor" : "#198038",
-                "backgroundColor" : "#4CAF50",
-                "customStyle" : {
-                  "enabled" : null,
-                  "hovered" : null,
-                  "pressed" : null,
-                  "activated" : null,
-                  "disabled" : null
-                },
-                "borderRadius" : "0px"
-              },
-              "uncheckedAppearance" : {
-                "type" : "basic",
-                "autoScale" : true,
-                "showLabel" : true,
-                "label" : "Closed",
-                "showIcon" : true,
-                "icon" : "sensor_door",
-                "iconSize" : 24,
-                "iconSizeUnit" : "px",
-                "mainColor" : "#000000",
-                "backgroundColor" : "#000000",
-                "customStyle" : {
-                  "enabled" : null,
-                  "hovered" : null,
-                  "pressed" : null,
-                  "activated" : null,
-                  "disabled" : null
-                },
-                "borderRadius" : "4px"
-              },
-              "background" : {
-                "type" : "color",
-                "color" : "#fff",
-                "overlay" : {
-                  "enabled" : false,
-                  "color" : "rgba(255,255,255,0.72)",
-                  "blur" : 3
-                }
-              },
-              "padding" : "12px"
-            },
-            "title" : "Door 1",
-            "dropShadow" : true,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
-            "actions" : { },
-            "widgetCss" : "",
-            "noDataDisplayMessage" : "",
-            "titleFont" : {
-              "size" : 16,
-              "sizeUnit" : "px",
-              "family" : "Roboto",
-              "weight" : "500",
-              "style" : null,
-              "lineHeight" : "1.6"
-            },
-            "showTitleIcon" : false,
-            "titleTooltip" : "",
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "pageSize" : 1024,
-            "titleIcon" : "home",
-            "iconColor" : "rgba(0, 0, 0, 0.87)",
-            "iconSize" : "24px",
-            "configMode" : "advanced",
-            "targetDevice" : {
-              "type" : "entity",
-              "entityAliasId" : "d559e96e-e510-8f65-9bae-164a598db19c"
-            },
-            "titleColor" : null,
-            "borderRadius" : null,
-            "datasources" : [ ]
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "f60fa095-2869-7a66-fa21-55d3b3b557d4"
-        },
-        "01b8e337-6bd5-775d-0906-41a3c9e01222" : {
-          "typeFullFqn" : "system.status_widget",
-          "type" : "rpc",
-          "sizeX" : 2,
-          "sizeY" : 2,
-          "config" : {
-            "showTitle" : true,
-            "backgroundColor" : "rgba(0, 0, 0, 0)",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0px",
-            "settings" : {
-              "initialState" : {
-                "action" : "GET_TIME_SERIES",
-                "defaultValue" : false,
-                "executeRpc" : {
-                  "method" : "getState",
-                  "requestTimeout" : 5000,
-                  "requestPersistent" : false,
-                  "persistentPollingInterval" : 1000
-                },
-                "getAttribute" : {
-                  "scope" : null,
-                  "key" : "state"
-                },
-                "getTimeSeries" : {
-                  "key" : "compressorstatus"
-                },
-                "getAlarmStatus" : {
-                  "severityList" : null,
-                  "typeList" : null
-                },
-                "dataToValue" : {
-                  "type" : "NONE",
-                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
-                  "compareToValue" : "On"
-                }
-              },
-              "disabledState" : {
-                "action" : "DO_NOTHING",
-                "defaultValue" : false,
-                "getAttribute" : {
-                  "key" : "state",
-                  "scope" : null
-                },
-                "getTimeSeries" : {
-                  "key" : "state"
-                },
-                "getAlarmStatus" : {
-                  "severityList" : null,
-                  "typeList" : null
-                },
-                "dataToValue" : {
-                  "type" : "NONE",
-                  "compareToValue" : true,
-                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
-                }
-              },
-              "layout" : "center",
-              "onState" : {
-                "showLabel" : false,
-                "label" : "Compressor 1",
-                "labelFont" : {
-                  "family" : "Roboto",
-                  "size" : 12,
-                  "sizeUnit" : "px",
-                  "style" : "normal",
-                  "weight" : "500",
-                  "lineHeight" : "16px"
-                },
-                "showStatus" : true,
-                "status" : "Running",
-                "statusFont" : {
-                  "family" : "Roboto",
-                  "size" : 10,
-                  "sizeUnit" : "px",
-                  "style" : "normal",
-                  "weight" : "500",
-                  "lineHeight" : "20px"
-                },
-                "icon" : "aod",
-                "iconSize" : 32,
-                "iconSizeUnit" : "px",
-                "primaryColor" : "#fff",
-                "secondaryColor" : "rgba(255, 255, 255, 0.80)",
-                "background" : {
-                  "type" : "color",
-                  "imageUrl" : null,
-                  "color" : "var(--tb-primary-A700)",
-                  "overlay" : {
-                    "enabled" : false,
-                    "color" : "rgba(255,255,255,0.72)",
-                    "blur" : 3
-                  }
-                },
-                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
-                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
-                "backgroundDisabled" : {
-                  "type" : "color",
-                  "color" : "#CACACA",
-                  "overlay" : {
-                    "enabled" : false,
-                    "color" : "rgba(255,255,255,0.72)",
-                    "blur" : 3
-                  }
-                }
-              },
-              "offState" : {
-                "showLabel" : false,
-                "label" : "Compressor 1",
-                "labelFont" : {
-                  "family" : "Roboto",
-                  "size" : 12,
-                  "sizeUnit" : "px",
-                  "style" : "normal",
-                  "weight" : "500",
-                  "lineHeight" : "16px"
-                },
-                "showStatus" : true,
-                "status" : "Stopped",
-                "statusFont" : {
-                  "family" : "Roboto",
-                  "size" : 10,
-                  "sizeUnit" : "px",
-                  "style" : "normal",
-                  "weight" : "500",
-                  "lineHeight" : "20px"
-                },
-                "icon" : "phone_android",
-                "iconSize" : 32,
-                "iconSizeUnit" : "px",
-                "primaryColor" : "rgba(237, 237, 237, 0.87)",
-                "secondaryColor" : "rgba(197, 197, 197, 0.54)",
-                "background" : {
-                  "type" : "color",
-                  "imageUrl" : null,
-                  "color" : "#890C03",
-                  "overlay" : {
-                    "enabled" : false,
-                    "color" : "rgba(255,255,255,0.72)",
-                    "blur" : 3
-                  }
-                },
-                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
-                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
-                "backgroundDisabled" : {
-                  "type" : "color",
-                  "color" : "#CACACA",
-                  "overlay" : {
-                    "enabled" : false,
-                    "color" : "rgba(255,255,255,0.72)",
-                    "blur" : 3
-                  }
-                }
-              },
-              "padding" : ""
-            },
-            "title" : "Compressor 1",
-            "dropShadow" : true,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
-            "actions" : { },
-            "widgetCss" : "",
-            "noDataDisplayMessage" : "",
-            "titleFont" : {
-              "size" : 20,
-              "sizeUnit" : "px",
-              "family" : "Roboto",
-              "weight" : "500",
-              "style" : null,
-              "lineHeight" : "1.6"
-            },
-            "showTitleIcon" : false,
-            "titleTooltip" : "",
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400,
-              "display" : "block",
-              "width" : "100%",
-              "textAlign" : "center"
-            },
-            "pageSize" : 1024,
-            "titleIcon" : "mdi:lightbulb-outline",
-            "iconColor" : "rgba(0, 0, 0, 0.87)",
-            "iconSize" : "24px",
-            "configMode" : "advanced",
-            "targetDevice" : {
-              "type" : "entity",
-              "entityAliasId" : "d559e96e-e510-8f65-9bae-164a598db19c"
-            },
-            "titleColor" : "#FFFFFF",
-            "borderRadius" : null,
-            "datasources" : [ ],
-            "enableDataExport" : true
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "01b8e337-6bd5-775d-0906-41a3c9e01222"
-        },
         "1b158044-ca8b-edd4-7392-e4f87114c3e3" : {
           "typeFullFqn" : "system.cards.value_card",
           "type" : "latest",
@@ -2282,11 +1887,11 @@
                 "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
               },
               "valueFont" : {
-                "family" : "Roboto",
-                "size" : 20,
+                "size" : 25,
                 "sizeUnit" : "px",
-                "style" : "normal",
+                "family" : "Roboto",
                 "weight" : "500",
+                "style" : "normal",
                 "lineHeight" : "24px"
               },
               "valueColor" : {
@@ -2298,7 +1903,7 @@
               "chevronSize" : 24,
               "chevronSizeUnit" : "px",
               "chevronColor" : "rgba(0, 0, 0, 0.38)",
-              "layout" : "column",
+              "layout" : "row",
               "autoScale" : true
             },
             "title" : "Alarm count",
@@ -2422,7 +2027,7 @@
               "label" : "Alarms",
               "labelFont" : {
                 "family" : "Roboto",
-                "size" : 12,
+                "size" : 20,
                 "sizeUnit" : "px",
                 "style" : "normal",
                 "weight" : "400",
@@ -2434,7 +2039,7 @@
                 "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
               },
               "showIcon" : true,
-              "iconSize" : 20,
+              "iconSize" : 25,
               "iconSizeUnit" : "px",
               "icon" : "warning",
               "iconColor" : {
@@ -2678,596 +2283,6 @@
           "col" : 0,
           "id" : "ffba74b5-e780-b0cb-1cdd-4115f62fc3ba"
         },
-        "7845253c-d319-972e-0bd6-6f32b08d9c72" : {
-          "typeFullFqn" : "system.toggle_button",
-          "type" : "rpc",
-          "sizeX" : 4,
-          "sizeY" : 2,
-          "config" : {
-            "showTitle" : true,
-            "backgroundColor" : "#ffffff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0px",
-            "settings" : {
-              "initialState" : {
-                "action" : "GET_TIME_SERIES",
-                "defaultValue" : false,
-                "executeRpc" : {
-                  "method" : "getState",
-                  "requestTimeout" : 5000,
-                  "requestPersistent" : false,
-                  "persistentPollingInterval" : 1000
-                },
-                "getAttribute" : {
-                  "scope" : null,
-                  "key" : "state"
-                },
-                "getTimeSeries" : {
-                  "key" : "doorstatus"
-                },
-                "getAlarmStatus" : {
-                  "severityList" : null,
-                  "typeList" : null
-                },
-                "dataToValue" : {
-                  "type" : "NONE",
-                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
-                  "compareToValue" : "Open"
-                }
-              },
-              "checkState" : {
-                "action" : "EXECUTE_RPC",
-                "executeRpc" : {
-                  "method" : " ",
-                  "requestTimeout" : 5000,
-                  "requestPersistent" : false,
-                  "persistentPollingInterval" : 1000
-                },
-                "setAttribute" : {
-                  "key" : "state",
-                  "scope" : "SERVER_SCOPE"
-                },
-                "putTimeSeries" : {
-                  "key" : "state"
-                },
-                "valueToData" : {
-                  "type" : "CONSTANT",
-                  "constantValue" : true,
-                  "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */\nreturn value;"
-                }
-              },
-              "uncheckState" : {
-                "action" : "EXECUTE_RPC",
-                "executeRpc" : {
-                  "method" : " ",
-                  "requestTimeout" : 5000,
-                  "requestPersistent" : false,
-                  "persistentPollingInterval" : 1000
-                },
-                "setAttribute" : {
-                  "key" : "state",
-                  "scope" : "SERVER_SCOPE"
-                },
-                "putTimeSeries" : {
-                  "key" : "state"
-                },
-                "valueToData" : {
-                  "type" : "CONSTANT",
-                  "constantValue" : false,
-                  "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */ \n return value;"
-                }
-              },
-              "disabledState" : {
-                "action" : "DO_NOTHING",
-                "defaultValue" : false,
-                "getAttribute" : {
-                  "key" : "state",
-                  "scope" : null
-                },
-                "getTimeSeries" : {
-                  "key" : "state"
-                },
-                "getAlarmStatus" : {
-                  "severityList" : null,
-                  "typeList" : null
-                },
-                "dataToValue" : {
-                  "type" : "NONE",
-                  "compareToValue" : true,
-                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
-                },
-                "executeRpc" : {
-                  "method" : null,
-                  "requestTimeout" : null,
-                  "requestPersistent" : null,
-                  "persistentPollingInterval" : null
-                }
-              },
-              "autoScale" : true,
-              "horizontalFill" : true,
-              "verticalFill" : false,
-              "checkedAppearance" : {
-                "type" : "basic",
-                "autoScale" : true,
-                "showLabel" : true,
-                "label" : "Open",
-                "showIcon" : true,
-                "icon" : "mdi:door-open",
-                "iconSize" : 24,
-                "iconSizeUnit" : "px",
-                "mainColor" : "#198038",
-                "backgroundColor" : "#4CAF50",
-                "customStyle" : {
-                  "enabled" : null,
-                  "hovered" : null,
-                  "pressed" : null,
-                  "activated" : null,
-                  "disabled" : null
-                },
-                "borderRadius" : "0px"
-              },
-              "uncheckedAppearance" : {
-                "type" : "basic",
-                "autoScale" : true,
-                "showLabel" : true,
-                "label" : "Closed",
-                "showIcon" : true,
-                "icon" : "sensor_door",
-                "iconSize" : 24,
-                "iconSizeUnit" : "px",
-                "mainColor" : "#000000",
-                "backgroundColor" : "#000000",
-                "customStyle" : {
-                  "enabled" : null,
-                  "hovered" : null,
-                  "pressed" : null,
-                  "activated" : null,
-                  "disabled" : null
-                },
-                "borderRadius" : "4px"
-              },
-              "background" : {
-                "type" : "color",
-                "color" : "#fff",
-                "overlay" : {
-                  "enabled" : false,
-                  "color" : "rgba(255,255,255,0.72)",
-                  "blur" : 3
-                }
-              },
-              "padding" : "12px"
-            },
-            "title" : "Door 2",
-            "dropShadow" : true,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
-            "actions" : { },
-            "widgetCss" : "",
-            "noDataDisplayMessage" : "",
-            "titleFont" : {
-              "size" : 16,
-              "sizeUnit" : "px",
-              "family" : "Roboto",
-              "weight" : "500",
-              "style" : null,
-              "lineHeight" : "1.6"
-            },
-            "showTitleIcon" : false,
-            "titleTooltip" : "",
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "pageSize" : 1024,
-            "titleIcon" : "home",
-            "iconColor" : "rgba(0, 0, 0, 0.87)",
-            "iconSize" : "24px",
-            "configMode" : "advanced",
-            "targetDevice" : {
-              "type" : "entity",
-              "entityAliasId" : "25a1e4d9-6a0d-76a7-8f62-1db950008db4"
-            },
-            "titleColor" : null,
-            "borderRadius" : null,
-            "datasources" : [ ],
-            "enableDataExport" : true
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "7845253c-d319-972e-0bd6-6f32b08d9c72"
-        },
-        "5a45960a-10fa-9472-fdcb-81caabb93ef9" : {
-          "typeFullFqn" : "system.status_widget",
-          "type" : "rpc",
-          "sizeX" : 2,
-          "sizeY" : 2,
-          "config" : {
-            "showTitle" : true,
-            "backgroundColor" : "rgba(0, 0, 0, 0)",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0px",
-            "settings" : {
-              "initialState" : {
-                "action" : "GET_TIME_SERIES",
-                "defaultValue" : false,
-                "executeRpc" : {
-                  "method" : "getState",
-                  "requestTimeout" : 5000,
-                  "requestPersistent" : false,
-                  "persistentPollingInterval" : 1000
-                },
-                "getAttribute" : {
-                  "key" : "state",
-                  "scope" : null
-                },
-                "getTimeSeries" : {
-                  "key" : "compressorstatus"
-                },
-                "getAlarmStatus" : {
-                  "severityList" : null,
-                  "typeList" : null
-                },
-                "dataToValue" : {
-                  "type" : "NONE",
-                  "compareToValue" : "On",
-                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
-                }
-              },
-              "disabledState" : {
-                "action" : "DO_NOTHING",
-                "defaultValue" : false,
-                "getAttribute" : {
-                  "key" : "state",
-                  "scope" : null
-                },
-                "getTimeSeries" : {
-                  "key" : "state"
-                },
-                "getAlarmStatus" : {
-                  "severityList" : null,
-                  "typeList" : null
-                },
-                "dataToValue" : {
-                  "type" : "NONE",
-                  "compareToValue" : true,
-                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
-                }
-              },
-              "layout" : "center",
-              "onState" : {
-                "showLabel" : false,
-                "label" : "Compressor 2",
-                "labelFont" : {
-                  "family" : "Roboto",
-                  "size" : 12,
-                  "sizeUnit" : "px",
-                  "style" : "normal",
-                  "weight" : "500",
-                  "lineHeight" : "16px"
-                },
-                "showStatus" : true,
-                "status" : "Running",
-                "statusFont" : {
-                  "family" : "Roboto",
-                  "size" : 10,
-                  "sizeUnit" : "px",
-                  "style" : "normal",
-                  "weight" : "500",
-                  "lineHeight" : "20px"
-                },
-                "icon" : "aod",
-                "iconSize" : 32,
-                "iconSizeUnit" : "px",
-                "primaryColor" : "#fff",
-                "secondaryColor" : "rgba(255, 255, 255, 0.80)",
-                "background" : {
-                  "type" : "color",
-                  "color" : "var(--tb-primary-A700)",
-                  "overlay" : {
-                    "enabled" : false,
-                    "color" : "rgba(255,255,255,0.72)",
-                    "blur" : 3
-                  },
-                  "imageUrl" : null
-                },
-                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
-                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
-                "backgroundDisabled" : {
-                  "type" : "color",
-                  "color" : "#CACACA",
-                  "overlay" : {
-                    "enabled" : false,
-                    "color" : "rgba(255,255,255,0.72)",
-                    "blur" : 3
-                  }
-                }
-              },
-              "offState" : {
-                "showLabel" : false,
-                "label" : "Compressor 2",
-                "labelFont" : {
-                  "family" : "Roboto",
-                  "size" : 12,
-                  "sizeUnit" : "px",
-                  "style" : "normal",
-                  "weight" : "500",
-                  "lineHeight" : "16px"
-                },
-                "showStatus" : true,
-                "status" : "Stopped",
-                "statusFont" : {
-                  "family" : "Roboto",
-                  "size" : 10,
-                  "sizeUnit" : "px",
-                  "style" : "normal",
-                  "weight" : "500",
-                  "lineHeight" : "20px"
-                },
-                "icon" : "phone_android",
-                "iconSize" : 32,
-                "iconSizeUnit" : "px",
-                "primaryColor" : "rgba(237, 237, 237, 0.87)",
-                "secondaryColor" : "rgba(197, 197, 197, 0.54)",
-                "background" : {
-                  "type" : "color",
-                  "color" : "#890C03",
-                  "overlay" : {
-                    "enabled" : false,
-                    "color" : "rgba(255,255,255,0.72)",
-                    "blur" : 3
-                  },
-                  "imageUrl" : null
-                },
-                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
-                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
-                "backgroundDisabled" : {
-                  "type" : "color",
-                  "color" : "#CACACA",
-                  "overlay" : {
-                    "enabled" : false,
-                    "color" : "rgba(255,255,255,0.72)",
-                    "blur" : 3
-                  }
-                }
-              },
-              "padding" : ""
-            },
-            "title" : "Compressor 2",
-            "dropShadow" : true,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
-            "actions" : { },
-            "widgetCss" : "",
-            "noDataDisplayMessage" : "",
-            "titleFont" : {
-              "size" : 20,
-              "sizeUnit" : "px",
-              "family" : "Roboto",
-              "weight" : "500",
-              "style" : null,
-              "lineHeight" : "1.6"
-            },
-            "showTitleIcon" : false,
-            "titleTooltip" : "",
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400,
-              "textAlign" : "center",
-              "width" : "100%",
-              "display" : "block"
-            },
-            "pageSize" : 1024,
-            "titleIcon" : "mdi:lightbulb-outline",
-            "iconColor" : "rgba(0, 0, 0, 0.87)",
-            "iconSize" : "24px",
-            "configMode" : "advanced",
-            "targetDevice" : {
-              "type" : "entity",
-              "entityAliasId" : "25a1e4d9-6a0d-76a7-8f62-1db950008db4"
-            },
-            "titleColor" : "#FFFFFF",
-            "borderRadius" : null,
-            "datasources" : [ ],
-            "enableDataExport" : true
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "5a45960a-10fa-9472-fdcb-81caabb93ef9"
-        },
-        "3e62c42b-9e4c-f1dc-3ada-46254da9e1b4" : {
-          "typeFullFqn" : "system.status_widget",
-          "type" : "rpc",
-          "sizeX" : 2,
-          "sizeY" : 2,
-          "config" : {
-            "showTitle" : false,
-            "backgroundColor" : "rgba(0, 0, 0, 0)",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0px",
-            "settings" : {
-              "initialState" : {
-                "action" : "GET_TIME_SERIES",
-                "defaultValue" : false,
-                "executeRpc" : {
-                  "method" : "getState",
-                  "requestTimeout" : 5000,
-                  "requestPersistent" : false,
-                  "persistentPollingInterval" : 1000
-                },
-                "getAttribute" : {
-                  "scope" : null,
-                  "key" : "state"
-                },
-                "getTimeSeries" : {
-                  "key" : "compressorstatus"
-                },
-                "getAlarmStatus" : {
-                  "severityList" : null,
-                  "typeList" : null
-                },
-                "dataToValue" : {
-                  "type" : "NONE",
-                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
-                  "compareToValue" : "On"
-                }
-              },
-              "disabledState" : {
-                "action" : "DO_NOTHING",
-                "defaultValue" : false,
-                "getAttribute" : {
-                  "key" : "state",
-                  "scope" : null
-                },
-                "getTimeSeries" : {
-                  "key" : "state"
-                },
-                "getAlarmStatus" : {
-                  "severityList" : null,
-                  "typeList" : null
-                },
-                "dataToValue" : {
-                  "type" : "NONE",
-                  "compareToValue" : true,
-                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
-                }
-              },
-              "layout" : "center",
-              "onState" : {
-                "showLabel" : true,
-                "label" : "Compressor 2",
-                "labelFont" : {
-                  "family" : "Roboto",
-                  "size" : 12,
-                  "sizeUnit" : "px",
-                  "style" : "normal",
-                  "weight" : "500",
-                  "lineHeight" : "16px"
-                },
-                "showStatus" : true,
-                "status" : "Running",
-                "statusFont" : {
-                  "family" : "Roboto",
-                  "size" : 10,
-                  "sizeUnit" : "px",
-                  "style" : "normal",
-                  "weight" : "500",
-                  "lineHeight" : "20px"
-                },
-                "icon" : "aod",
-                "iconSize" : 32,
-                "iconSizeUnit" : "px",
-                "primaryColor" : "#fff",
-                "secondaryColor" : "rgba(255, 255, 255, 0.80)",
-                "background" : {
-                  "type" : "color",
-                  "imageUrl" : null,
-                  "color" : "var(--tb-primary-A700)",
-                  "overlay" : {
-                    "enabled" : false,
-                    "color" : "rgba(255,255,255,0.72)",
-                    "blur" : 3
-                  }
-                },
-                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
-                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
-                "backgroundDisabled" : {
-                  "type" : "color",
-                  "color" : "#CACACA",
-                  "overlay" : {
-                    "enabled" : false,
-                    "color" : "rgba(255,255,255,0.72)",
-                    "blur" : 3
-                  }
-                }
-              },
-              "offState" : {
-                "showLabel" : true,
-                "label" : "Compressor 2",
-                "labelFont" : {
-                  "family" : "Roboto",
-                  "size" : 12,
-                  "sizeUnit" : "px",
-                  "style" : "normal",
-                  "weight" : "500",
-                  "lineHeight" : "16px"
-                },
-                "showStatus" : true,
-                "status" : "Stopped",
-                "statusFont" : {
-                  "family" : "Roboto",
-                  "size" : 10,
-                  "sizeUnit" : "px",
-                  "style" : "normal",
-                  "weight" : "500",
-                  "lineHeight" : "20px"
-                },
-                "icon" : "phone_android",
-                "iconSize" : 32,
-                "iconSizeUnit" : "px",
-                "primaryColor" : "rgba(237, 237, 237, 0.87)",
-                "secondaryColor" : "rgba(197, 197, 197, 0.54)",
-                "background" : {
-                  "type" : "color",
-                  "imageUrl" : null,
-                  "color" : "#890C03",
-                  "overlay" : {
-                    "enabled" : false,
-                    "color" : "rgba(255,255,255,0.72)",
-                    "blur" : 3
-                  }
-                },
-                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
-                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
-                "backgroundDisabled" : {
-                  "type" : "color",
-                  "color" : "#CACACA",
-                  "overlay" : {
-                    "enabled" : false,
-                    "color" : "rgba(255,255,255,0.72)",
-                    "blur" : 3
-                  }
-                }
-              },
-              "padding" : ""
-            },
-            "title" : "Status widget",
-            "dropShadow" : true,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
-            "actions" : { },
-            "widgetCss" : "",
-            "noDataDisplayMessage" : "",
-            "titleFont" : {
-              "size" : 16,
-              "sizeUnit" : "px",
-              "family" : "Roboto",
-              "weight" : "500",
-              "style" : null,
-              "lineHeight" : "1.6"
-            },
-            "showTitleIcon" : false,
-            "titleTooltip" : "",
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "pageSize" : 1024,
-            "titleIcon" : "mdi:lightbulb-outline",
-            "iconColor" : "rgba(0, 0, 0, 0.87)",
-            "iconSize" : "24px",
-            "configMode" : "basic",
-            "targetDevice" : {
-              "type" : "entity",
-              "entityAliasId" : "25a1e4d9-6a0d-76a7-8f62-1db950008db4"
-            },
-            "titleColor" : null,
-            "borderRadius" : null,
-            "datasources" : [ ]
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "3e62c42b-9e4c-f1dc-3ada-46254da9e1b4"
-        },
         "a610b517-47fa-59cb-7963-bb03c0014f83" : {
           "typeFullFqn" : "system.alarm_count",
           "type" : "latest",
@@ -3373,11 +2388,11 @@
                 "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
               },
               "valueFont" : {
-                "family" : "Roboto",
-                "size" : 20,
+                "size" : 25,
                 "sizeUnit" : "px",
-                "style" : "normal",
+                "family" : "Roboto",
                 "weight" : "500",
+                "style" : "normal",
                 "lineHeight" : "24px"
               },
               "valueColor" : {
@@ -3389,7 +2404,7 @@
               "chevronSize" : 24,
               "chevronSizeUnit" : "px",
               "chevronColor" : "rgba(0, 0, 0, 0.38)",
-              "layout" : "column",
+              "layout" : "row",
               "autoScale" : true
             },
             "title" : "Alarm count",
@@ -4107,6 +3122,1826 @@
           "row" : 0,
           "col" : 0,
           "id" : "cbda8bcc-0b7f-5b79-8a51-ecfd7c5cef8b"
+        },
+        "3ee5732a-84ae-4802-f03e-cd0a2811737c" : {
+          "typeFullFqn" : "system.control_widgets.led_indicator",
+          "type" : "rpc",
+          "sizeX" : 2.5,
+          "sizeY" : 2.5,
+          "config" : {
+            "targetDeviceAliases" : [ ],
+            "showTitle" : false,
+            "backgroundColor" : "#FFFFFF",
+            "color" : "rgb(0, 0, 0)",
+            "padding" : "0px",
+            "settings" : {
+              "title" : "Compressor 1",
+              "ledColor" : "#4caf50",
+              "initialValue" : true,
+              "performCheckStatus" : false,
+              "retrieveValueMethod" : "attribute",
+              "checkStatusMethod" : "checkStatus",
+              "valueAttribute" : "compressorStatus",
+              "parseValueFunction" : "return data;",
+              "requestTimeout" : 500,
+              "requestPersistent" : false,
+              "persistentPollingInterval" : 5000
+            },
+            "title" : "Led indicator",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "decimals" : 2,
+            "datasources" : [ ],
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "d559e96e-e510-8f65-9bae-164a598db19c"
+            },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : true,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "3ee5732a-84ae-4802-f03e-cd0a2811737c"
+        },
+        "8167e30d-754c-c52a-6257-f60824542c77" : {
+          "typeFullFqn" : "system.control_widgets.led_indicator",
+          "type" : "rpc",
+          "sizeX" : 2.5,
+          "sizeY" : 2.5,
+          "config" : {
+            "targetDeviceAliases" : [ ],
+            "showTitle" : false,
+            "backgroundColor" : "#FFFFFF",
+            "color" : "rgb(0, 0, 0)",
+            "padding" : "0px",
+            "settings" : {
+              "title" : "Compressor 2",
+              "ledColor" : "#4caf50",
+              "initialValue" : true,
+              "performCheckStatus" : false,
+              "retrieveValueMethod" : "attribute",
+              "checkStatusMethod" : "checkStatus",
+              "valueAttribute" : "compressorStatus",
+              "parseValueFunction" : "return data;",
+              "requestTimeout" : 500,
+              "requestPersistent" : false,
+              "persistentPollingInterval" : 5000
+            },
+            "title" : "Led indicator",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "decimals" : 2,
+            "datasources" : [ ],
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "25a1e4d9-6a0d-76a7-8f62-1db950008db4"
+            },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : true,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "8167e30d-754c-c52a-6257-f60824542c77"
+        },
+        "45e71af4-60ea-46e7-8253-afc4f5604b03" : {
+          "typeFullFqn" : "system.status_widget",
+          "type" : "rpc",
+          "sizeX" : 2,
+          "sizeY" : 2,
+          "config" : {
+            "showTitle" : false,
+            "backgroundColor" : "rgba(0, 0, 0, 0)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "initialState" : {
+                "action" : "GET_TIME_SERIES",
+                "defaultValue" : false,
+                "executeRpc" : {
+                  "method" : "getState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "getAttribute" : {
+                  "scope" : null,
+                  "key" : "state"
+                },
+                "getTimeSeries" : {
+                  "key" : "doorstatus"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
+                  "compareToValue" : "Open"
+                }
+              },
+              "disabledState" : {
+                "action" : "DO_NOTHING",
+                "defaultValue" : false,
+                "getAttribute" : {
+                  "key" : "state",
+                  "scope" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "state"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "compareToValue" : true,
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
+                }
+              },
+              "layout" : "center",
+              "onState" : {
+                "showLabel" : true,
+                "label" : "Door 1",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "16px"
+                },
+                "showStatus" : false,
+                "status" : "Opened",
+                "statusFont" : {
+                  "family" : "Roboto",
+                  "size" : 10,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "20px"
+                },
+                "icon" : "mdi:door-open",
+                "iconSize" : 60,
+                "iconSizeUnit" : "px",
+                "primaryColor" : "#8BC34A",
+                "secondaryColor" : "rgba(255, 255, 255, 0.80)",
+                "background" : {
+                  "type" : "color",
+                  "imageUrl" : null,
+                  "color" : "#FFFFFF",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                },
+                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "backgroundDisabled" : {
+                  "type" : "color",
+                  "color" : "#CACACA",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                }
+              },
+              "offState" : {
+                "showLabel" : true,
+                "label" : "Door 1",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "16px"
+                },
+                "showStatus" : false,
+                "status" : "Closed",
+                "statusFont" : {
+                  "family" : "Roboto",
+                  "size" : 10,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "20px"
+                },
+                "icon" : "sensor_door",
+                "iconSize" : 60,
+                "iconSizeUnit" : "px",
+                "primaryColor" : "rgba(0, 0, 0, 0.87)",
+                "secondaryColor" : "rgba(0, 0, 0, 0.54)",
+                "background" : {
+                  "type" : "color",
+                  "color" : "#FFF",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                },
+                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "backgroundDisabled" : {
+                  "type" : "color",
+                  "color" : "#CACACA",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                }
+              },
+              "padding" : ""
+            },
+            "title" : "Status widget",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "widgetCss" : "",
+            "noDataDisplayMessage" : "",
+            "titleFont" : {
+              "size" : 16,
+              "sizeUnit" : "px",
+              "family" : "Roboto",
+              "weight" : "500",
+              "style" : null,
+              "lineHeight" : "1.6"
+            },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "pageSize" : 1024,
+            "titleIcon" : "mdi:lightbulb-outline",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "configMode" : "basic",
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "d559e96e-e510-8f65-9bae-164a598db19c"
+            },
+            "titleColor" : null,
+            "borderRadius" : null,
+            "datasources" : [ ]
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "45e71af4-60ea-46e7-8253-afc4f5604b03"
+        },
+        "7d7eca3b-9e85-8bce-7adc-17c8389704e7" : {
+          "typeFullFqn" : "system.status_widget",
+          "type" : "rpc",
+          "sizeX" : 2,
+          "sizeY" : 2,
+          "config" : {
+            "showTitle" : false,
+            "backgroundColor" : "rgba(0, 0, 0, 0)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "initialState" : {
+                "action" : "GET_TIME_SERIES",
+                "defaultValue" : false,
+                "executeRpc" : {
+                  "method" : "getState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "getAttribute" : {
+                  "scope" : null,
+                  "key" : "state"
+                },
+                "getTimeSeries" : {
+                  "key" : "doorstatus"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
+                  "compareToValue" : "Open"
+                }
+              },
+              "disabledState" : {
+                "action" : "DO_NOTHING",
+                "defaultValue" : false,
+                "getAttribute" : {
+                  "key" : "state",
+                  "scope" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "state"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "compareToValue" : true,
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
+                }
+              },
+              "layout" : "center",
+              "onState" : {
+                "showLabel" : true,
+                "label" : "Door 2",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "16px"
+                },
+                "showStatus" : false,
+                "status" : "Opened",
+                "statusFont" : {
+                  "family" : "Roboto",
+                  "size" : 10,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "20px"
+                },
+                "icon" : "mdi:door-open",
+                "iconSize" : 60,
+                "iconSizeUnit" : "px",
+                "primaryColor" : "#8BC34A",
+                "secondaryColor" : "rgba(255, 255, 255, 0.80)",
+                "background" : {
+                  "type" : "color",
+                  "imageUrl" : null,
+                  "color" : "#FFFFFF",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                },
+                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "backgroundDisabled" : {
+                  "type" : "color",
+                  "color" : "#CACACA",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                }
+              },
+              "offState" : {
+                "showLabel" : true,
+                "label" : "Door 2",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "16px"
+                },
+                "showStatus" : false,
+                "status" : "Closed",
+                "statusFont" : {
+                  "family" : "Roboto",
+                  "size" : 10,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "20px"
+                },
+                "icon" : "sensor_door",
+                "iconSize" : 60,
+                "iconSizeUnit" : "px",
+                "primaryColor" : "rgba(0, 0, 0, 0.87)",
+                "secondaryColor" : "rgba(0, 0, 0, 0.54)",
+                "background" : {
+                  "type" : "color",
+                  "color" : "#FFF",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                },
+                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "backgroundDisabled" : {
+                  "type" : "color",
+                  "color" : "#CACACA",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                }
+              },
+              "padding" : ""
+            },
+            "title" : "Status widget",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "widgetCss" : "",
+            "noDataDisplayMessage" : "",
+            "titleFont" : {
+              "size" : 16,
+              "sizeUnit" : "px",
+              "family" : "Roboto",
+              "weight" : "500",
+              "style" : null,
+              "lineHeight" : "1.6"
+            },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "pageSize" : 1024,
+            "titleIcon" : "mdi:lightbulb-outline",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "configMode" : "basic",
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "25a1e4d9-6a0d-76a7-8f62-1db950008db4"
+            },
+            "titleColor" : null,
+            "borderRadius" : null,
+            "datasources" : [ ]
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "7d7eca3b-9e85-8bce-7adc-17c8389704e7"
+        },
+        "394fa58d-dcf3-8e1a-1726-a4bc15c36e6a" : {
+          "typeFullFqn" : "system.control_widgets.led_indicator",
+          "type" : "rpc",
+          "sizeX" : 2.5,
+          "sizeY" : 2.5,
+          "config" : {
+            "targetDeviceAliases" : [ ],
+            "showTitle" : false,
+            "backgroundColor" : "#FFFFFF",
+            "color" : "rgb(0, 0, 0)",
+            "padding" : "0px",
+            "settings" : {
+              "title" : "Compressor 1",
+              "ledColor" : "#4caf50",
+              "initialValue" : true,
+              "performCheckStatus" : false,
+              "retrieveValueMethod" : "attribute",
+              "checkStatusMethod" : "checkStatus",
+              "valueAttribute" : "compressorStatus",
+              "parseValueFunction" : "return data;",
+              "requestTimeout" : 500,
+              "requestPersistent" : false,
+              "persistentPollingInterval" : 5000
+            },
+            "title" : "Led indicator",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "decimals" : 2,
+            "datasources" : [ ],
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "d559e96e-e510-8f65-9bae-164a598db19c"
+            },
+            "enableDataExport" : true,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "394fa58d-dcf3-8e1a-1726-a4bc15c36e6a"
+        },
+        "e93b7481-b913-52fe-4886-7fe00004260e" : {
+          "typeFullFqn" : "system.control_widgets.led_indicator",
+          "type" : "rpc",
+          "sizeX" : 2.5,
+          "sizeY" : 2.5,
+          "config" : {
+            "targetDeviceAliases" : [ ],
+            "showTitle" : false,
+            "backgroundColor" : "#FFFFFF",
+            "color" : "rgb(0, 0, 0)",
+            "padding" : "0px",
+            "settings" : {
+              "title" : "Compressor 2",
+              "ledColor" : "#4caf50",
+              "initialValue" : true,
+              "performCheckStatus" : false,
+              "retrieveValueMethod" : "attribute",
+              "checkStatusMethod" : "checkStatus",
+              "valueAttribute" : "compressorStatus",
+              "parseValueFunction" : "return data;",
+              "requestTimeout" : 500,
+              "requestPersistent" : false,
+              "persistentPollingInterval" : 5000
+            },
+            "title" : "Led indicator",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "decimals" : 2,
+            "datasources" : [ ],
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "25a1e4d9-6a0d-76a7-8f62-1db950008db4"
+            },
+            "enableDataExport" : true,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "e93b7481-b913-52fe-4886-7fe00004260e"
+        },
+        "5e1792b6-f0cd-dcca-e05c-26a552d65718" : {
+          "typeFullFqn" : "system.status_widget",
+          "type" : "rpc",
+          "sizeX" : 2,
+          "sizeY" : 2,
+          "config" : {
+            "showTitle" : false,
+            "backgroundColor" : "rgba(0, 0, 0, 0)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "initialState" : {
+                "action" : "GET_TIME_SERIES",
+                "defaultValue" : false,
+                "executeRpc" : {
+                  "method" : "getState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "getAttribute" : {
+                  "scope" : null,
+                  "key" : "state"
+                },
+                "getTimeSeries" : {
+                  "key" : "doorstatus"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
+                  "compareToValue" : "Open"
+                }
+              },
+              "disabledState" : {
+                "action" : "DO_NOTHING",
+                "defaultValue" : false,
+                "getAttribute" : {
+                  "key" : "state",
+                  "scope" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "state"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "compareToValue" : true,
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
+                }
+              },
+              "layout" : "center",
+              "onState" : {
+                "showLabel" : true,
+                "label" : "Door 1",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "16px"
+                },
+                "showStatus" : false,
+                "status" : "Opened",
+                "statusFont" : {
+                  "family" : "Roboto",
+                  "size" : 10,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "20px"
+                },
+                "icon" : "mdi:door-open",
+                "iconSize" : 60,
+                "iconSizeUnit" : "px",
+                "primaryColor" : "#8BC34A",
+                "secondaryColor" : "rgba(255, 255, 255, 0.80)",
+                "background" : {
+                  "type" : "color",
+                  "imageUrl" : null,
+                  "color" : "#FFFFFF",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                },
+                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "backgroundDisabled" : {
+                  "type" : "color",
+                  "color" : "#CACACA",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                }
+              },
+              "offState" : {
+                "showLabel" : true,
+                "label" : "Door 1",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "16px"
+                },
+                "showStatus" : false,
+                "status" : "Closed",
+                "statusFont" : {
+                  "family" : "Roboto",
+                  "size" : 10,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "20px"
+                },
+                "icon" : "sensor_door",
+                "iconSize" : 60,
+                "iconSizeUnit" : "px",
+                "primaryColor" : "rgba(0, 0, 0, 0.87)",
+                "secondaryColor" : "rgba(0, 0, 0, 0.54)",
+                "background" : {
+                  "type" : "color",
+                  "color" : "#FFF",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                },
+                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "backgroundDisabled" : {
+                  "type" : "color",
+                  "color" : "#CACACA",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                }
+              },
+              "padding" : ""
+            },
+            "title" : "Status widget",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "widgetCss" : "",
+            "noDataDisplayMessage" : "",
+            "titleFont" : {
+              "size" : 16,
+              "sizeUnit" : "px",
+              "family" : "Roboto",
+              "weight" : "500",
+              "style" : null,
+              "lineHeight" : "1.6"
+            },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "pageSize" : 1024,
+            "titleIcon" : "mdi:lightbulb-outline",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "configMode" : "basic",
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "d559e96e-e510-8f65-9bae-164a598db19c"
+            },
+            "titleColor" : null,
+            "borderRadius" : null,
+            "datasources" : [ ]
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "5e1792b6-f0cd-dcca-e05c-26a552d65718"
+        },
+        "20bc8119-ec21-1a6b-08c2-c7f3d5628f07" : {
+          "typeFullFqn" : "system.status_widget",
+          "type" : "rpc",
+          "sizeX" : 2,
+          "sizeY" : 2,
+          "config" : {
+            "showTitle" : false,
+            "backgroundColor" : "rgba(0, 0, 0, 0)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "initialState" : {
+                "action" : "GET_TIME_SERIES",
+                "defaultValue" : false,
+                "executeRpc" : {
+                  "method" : "getState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "getAttribute" : {
+                  "scope" : null,
+                  "key" : "state"
+                },
+                "getTimeSeries" : {
+                  "key" : "doorstatus"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
+                  "compareToValue" : "Open"
+                }
+              },
+              "disabledState" : {
+                "action" : "DO_NOTHING",
+                "defaultValue" : false,
+                "getAttribute" : {
+                  "key" : "state",
+                  "scope" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "state"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "compareToValue" : true,
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
+                }
+              },
+              "layout" : "center",
+              "onState" : {
+                "showLabel" : true,
+                "label" : "Door 2",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "16px"
+                },
+                "showStatus" : false,
+                "status" : "Opened",
+                "statusFont" : {
+                  "family" : "Roboto",
+                  "size" : 10,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "20px"
+                },
+                "icon" : "mdi:door-open",
+                "iconSize" : 60,
+                "iconSizeUnit" : "px",
+                "primaryColor" : "#8BC34A",
+                "secondaryColor" : "rgba(255, 255, 255, 0.80)",
+                "background" : {
+                  "type" : "color",
+                  "imageUrl" : null,
+                  "color" : "#FFFFFF",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                },
+                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "backgroundDisabled" : {
+                  "type" : "color",
+                  "color" : "#CACACA",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                }
+              },
+              "offState" : {
+                "showLabel" : true,
+                "label" : "Door 2",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "16px"
+                },
+                "showStatus" : false,
+                "status" : "Closed",
+                "statusFont" : {
+                  "family" : "Roboto",
+                  "size" : 10,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "20px"
+                },
+                "icon" : "sensor_door",
+                "iconSize" : 60,
+                "iconSizeUnit" : "px",
+                "primaryColor" : "rgba(0, 0, 0, 0.87)",
+                "secondaryColor" : "rgba(0, 0, 0, 0.54)",
+                "background" : {
+                  "type" : "color",
+                  "color" : "#FFF",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                },
+                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "backgroundDisabled" : {
+                  "type" : "color",
+                  "color" : "#CACACA",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                }
+              },
+              "padding" : ""
+            },
+            "title" : "Status widget",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "widgetCss" : "",
+            "noDataDisplayMessage" : "",
+            "titleFont" : {
+              "size" : 16,
+              "sizeUnit" : "px",
+              "family" : "Roboto",
+              "weight" : "500",
+              "style" : null,
+              "lineHeight" : "1.6"
+            },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "pageSize" : 1024,
+            "titleIcon" : "mdi:lightbulb-outline",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "configMode" : "basic",
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "25a1e4d9-6a0d-76a7-8f62-1db950008db4"
+            },
+            "titleColor" : null,
+            "borderRadius" : null,
+            "datasources" : [ ]
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "20bc8119-ec21-1a6b-08c2-c7f3d5628f07"
+        },
+        "c5037ae6-a265-3916-d84f-efa4ade4d961" : {
+          "typeFullFqn" : "system.control_widgets.led_indicator",
+          "type" : "rpc",
+          "sizeX" : 2.5,
+          "sizeY" : 2.5,
+          "config" : {
+            "targetDeviceAliases" : [ ],
+            "showTitle" : false,
+            "backgroundColor" : "#FFFFFF",
+            "color" : "rgb(0, 0, 0)",
+            "padding" : "0px",
+            "settings" : {
+              "title" : "Compressor 1",
+              "ledColor" : "#4caf50",
+              "initialValue" : true,
+              "performCheckStatus" : false,
+              "retrieveValueMethod" : "attribute",
+              "checkStatusMethod" : "checkStatus",
+              "valueAttribute" : "compressorStatus",
+              "parseValueFunction" : "return data;",
+              "requestTimeout" : 500,
+              "requestPersistent" : false,
+              "persistentPollingInterval" : 5000
+            },
+            "title" : "Led indicator",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "decimals" : 2,
+            "datasources" : [ ],
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "d559e96e-e510-8f65-9bae-164a598db19c"
+            },
+            "enableDataExport" : true,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "c5037ae6-a265-3916-d84f-efa4ade4d961"
+        },
+        "aaa9250d-46e9-6c49-273a-566e87d1ce08" : {
+          "typeFullFqn" : "system.control_widgets.led_indicator",
+          "type" : "rpc",
+          "sizeX" : 2.5,
+          "sizeY" : 2.5,
+          "config" : {
+            "targetDeviceAliases" : [ ],
+            "showTitle" : false,
+            "backgroundColor" : "#FFFFFF",
+            "color" : "rgb(0, 0, 0)",
+            "padding" : "0px",
+            "settings" : {
+              "title" : "Compressor 2",
+              "ledColor" : "#4caf50",
+              "initialValue" : true,
+              "performCheckStatus" : false,
+              "retrieveValueMethod" : "attribute",
+              "checkStatusMethod" : "checkStatus",
+              "valueAttribute" : "compressorStatus",
+              "parseValueFunction" : "return data;",
+              "requestTimeout" : 500,
+              "requestPersistent" : false,
+              "persistentPollingInterval" : 5000
+            },
+            "title" : "Led indicator",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "decimals" : 2,
+            "datasources" : [ ],
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "25a1e4d9-6a0d-76a7-8f62-1db950008db4"
+            },
+            "enableDataExport" : true,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "aaa9250d-46e9-6c49-273a-566e87d1ce08"
+        },
+        "1042a0f6-6042-36a5-ea7e-8b6f0c5b4a64" : {
+          "typeFullFqn" : "system.status_widget",
+          "type" : "rpc",
+          "sizeX" : 2,
+          "sizeY" : 2,
+          "config" : {
+            "showTitle" : false,
+            "backgroundColor" : "rgba(0, 0, 0, 0)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "initialState" : {
+                "action" : "GET_TIME_SERIES",
+                "defaultValue" : false,
+                "executeRpc" : {
+                  "method" : "getState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "getAttribute" : {
+                  "scope" : null,
+                  "key" : "state"
+                },
+                "getTimeSeries" : {
+                  "key" : "doorstatus"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
+                  "compareToValue" : "Open"
+                }
+              },
+              "disabledState" : {
+                "action" : "DO_NOTHING",
+                "defaultValue" : false,
+                "getAttribute" : {
+                  "key" : "state",
+                  "scope" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "state"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "compareToValue" : true,
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
+                }
+              },
+              "layout" : "center",
+              "onState" : {
+                "showLabel" : true,
+                "label" : "Door 1",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "16px"
+                },
+                "showStatus" : false,
+                "status" : "Opened",
+                "statusFont" : {
+                  "family" : "Roboto",
+                  "size" : 10,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "20px"
+                },
+                "icon" : "mdi:door-open",
+                "iconSize" : 60,
+                "iconSizeUnit" : "px",
+                "primaryColor" : "#8BC34A",
+                "secondaryColor" : "rgba(255, 255, 255, 0.80)",
+                "background" : {
+                  "type" : "color",
+                  "imageUrl" : null,
+                  "color" : "#FFFFFF",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                },
+                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "backgroundDisabled" : {
+                  "type" : "color",
+                  "color" : "#CACACA",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                }
+              },
+              "offState" : {
+                "showLabel" : true,
+                "label" : "Door 1",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "16px"
+                },
+                "showStatus" : false,
+                "status" : "Closed",
+                "statusFont" : {
+                  "family" : "Roboto",
+                  "size" : 10,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "20px"
+                },
+                "icon" : "sensor_door",
+                "iconSize" : 60,
+                "iconSizeUnit" : "px",
+                "primaryColor" : "rgba(0, 0, 0, 0.87)",
+                "secondaryColor" : "rgba(0, 0, 0, 0.54)",
+                "background" : {
+                  "type" : "color",
+                  "color" : "#FFF",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                },
+                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "backgroundDisabled" : {
+                  "type" : "color",
+                  "color" : "#CACACA",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                }
+              },
+              "padding" : ""
+            },
+            "title" : "Status widget",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "widgetCss" : "",
+            "noDataDisplayMessage" : "",
+            "titleFont" : {
+              "size" : 16,
+              "sizeUnit" : "px",
+              "family" : "Roboto",
+              "weight" : "500",
+              "style" : null,
+              "lineHeight" : "1.6"
+            },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "pageSize" : 1024,
+            "titleIcon" : "mdi:lightbulb-outline",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "configMode" : "basic",
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "d559e96e-e510-8f65-9bae-164a598db19c"
+            },
+            "titleColor" : null,
+            "borderRadius" : null,
+            "datasources" : [ ]
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "1042a0f6-6042-36a5-ea7e-8b6f0c5b4a64"
+        },
+        "f044a29a-6119-9a63-c15d-c10fa63e0c24" : {
+          "typeFullFqn" : "system.status_widget",
+          "type" : "rpc",
+          "sizeX" : 2,
+          "sizeY" : 2,
+          "config" : {
+            "showTitle" : false,
+            "backgroundColor" : "rgba(0, 0, 0, 0)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "initialState" : {
+                "action" : "GET_TIME_SERIES",
+                "defaultValue" : false,
+                "executeRpc" : {
+                  "method" : "getState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "getAttribute" : {
+                  "scope" : null,
+                  "key" : "state"
+                },
+                "getTimeSeries" : {
+                  "key" : "doorstatus"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
+                  "compareToValue" : "Open"
+                }
+              },
+              "disabledState" : {
+                "action" : "DO_NOTHING",
+                "defaultValue" : false,
+                "getAttribute" : {
+                  "key" : "state",
+                  "scope" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "state"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "compareToValue" : true,
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
+                }
+              },
+              "layout" : "center",
+              "onState" : {
+                "showLabel" : true,
+                "label" : "Door 2",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "16px"
+                },
+                "showStatus" : false,
+                "status" : "Opened",
+                "statusFont" : {
+                  "family" : "Roboto",
+                  "size" : 10,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "20px"
+                },
+                "icon" : "mdi:door-open",
+                "iconSize" : 60,
+                "iconSizeUnit" : "px",
+                "primaryColor" : "#8BC34A",
+                "secondaryColor" : "rgba(255, 255, 255, 0.80)",
+                "background" : {
+                  "type" : "color",
+                  "imageUrl" : null,
+                  "color" : "#FFFFFF",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                },
+                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "backgroundDisabled" : {
+                  "type" : "color",
+                  "color" : "#CACACA",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                }
+              },
+              "offState" : {
+                "showLabel" : true,
+                "label" : "Door 2",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "16px"
+                },
+                "showStatus" : false,
+                "status" : "Closed",
+                "statusFont" : {
+                  "family" : "Roboto",
+                  "size" : 10,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "20px"
+                },
+                "icon" : "sensor_door",
+                "iconSize" : 60,
+                "iconSizeUnit" : "px",
+                "primaryColor" : "rgba(0, 0, 0, 0.87)",
+                "secondaryColor" : "rgba(0, 0, 0, 0.54)",
+                "background" : {
+                  "type" : "color",
+                  "color" : "#FFF",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                },
+                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "backgroundDisabled" : {
+                  "type" : "color",
+                  "color" : "#CACACA",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                }
+              },
+              "padding" : ""
+            },
+            "title" : "Status widget",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "widgetCss" : "",
+            "noDataDisplayMessage" : "",
+            "titleFont" : {
+              "size" : 16,
+              "sizeUnit" : "px",
+              "family" : "Roboto",
+              "weight" : "500",
+              "style" : null,
+              "lineHeight" : "1.6"
+            },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "pageSize" : 1024,
+            "titleIcon" : "mdi:lightbulb-outline",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "configMode" : "basic",
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "25a1e4d9-6a0d-76a7-8f62-1db950008db4"
+            },
+            "titleColor" : null,
+            "borderRadius" : null,
+            "datasources" : [ ]
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "f044a29a-6119-9a63-c15d-c10fa63e0c24"
+        },
+        "2c79b9bd-ba9a-ced1-0e6b-3a12c6867123" : {
+          "typeFullFqn" : "system.alarm_count",
+          "type" : "latest",
+          "sizeX" : 3.5,
+          "sizeY" : 1.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "alarmCount",
+              "name" : "",
+              "entityAliasId" : "d559e96e-e510-8f65-9bae-164a598db19c",
+              "dataKeys" : [ {
+                "name" : "count",
+                "type" : "count",
+                "label" : "count",
+                "settings" : { },
+                "_hash" : 0.23948473175212903
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ],
+                "severityList" : [ "CRITICAL", "MAJOR", "MINOR", "WARNING", "INDETERMINATE" ],
+                "assignedToCurrentUser" : false,
+                "assigneeId" : null
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1755479689436,
+                  "endTimeMs" : 1755566089436
+                },
+                "quickInterval" : "CURRENT_DAY",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideFixedInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "showLabel" : true,
+              "label" : "Alarms",
+              "labelFont" : {
+                "size" : 20,
+                "sizeUnit" : "px",
+                "family" : "Roboto",
+                "weight" : "400",
+                "style" : "normal",
+                "lineHeight" : "16px"
+              },
+              "labelColor" : {
+                "type" : "constant",
+                "color" : "rgba(0, 0, 0, 0.54)",
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "showIcon" : true,
+              "iconSize" : 20,
+              "iconSizeUnit" : "px",
+              "icon" : "warning",
+              "iconColor" : {
+                "type" : "constant",
+                "color" : "rgba(255, 255, 255, 1)",
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "showIconBackground" : true,
+              "iconBackgroundSize" : 36,
+              "iconBackgroundSizeUnit" : "px",
+              "iconBackgroundColor" : {
+                "type" : "range",
+                "color" : "rgba(0, 105, 92, 1)",
+                "rangeList" : {
+                  "advancedMode" : false,
+                  "range" : [ {
+                    "from" : 0,
+                    "to" : 0,
+                    "color" : "rgba(0, 105, 92, 1)"
+                  }, {
+                    "from" : 1,
+                    "to" : null,
+                    "color" : "rgba(209, 39, 48, 1)"
+                  } ]
+                },
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "valueFont" : {
+                "family" : "Roboto",
+                "size" : 20,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "500",
+                "lineHeight" : "24px"
+              },
+              "valueColor" : {
+                "type" : "constant",
+                "color" : "rgba(0, 0, 0, 0.87)",
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "showChevron" : false,
+              "chevronSize" : 24,
+              "chevronSizeUnit" : "px",
+              "chevronColor" : "rgba(0, 0, 0, 0.38)",
+              "layout" : "column",
+              "autoScale" : true
+            },
+            "title" : "Alarm count",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "units" : "",
+            "decimals" : null,
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "configMode" : "basic",
+            "displayTimewindow" : true,
+            "margin" : "0px",
+            "borderRadius" : "0px",
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "titleFont" : {
+              "size" : 12,
+              "sizeUnit" : "px",
+              "family" : null,
+              "weight" : null,
+              "style" : null,
+              "lineHeight" : "1"
+            },
+            "titleIcon" : "",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "14px",
+            "timewindowStyle" : {
+              "showIcon" : true,
+              "iconSize" : "14px",
+              "icon" : "query_builder",
+              "iconPosition" : "left",
+              "font" : {
+                "size" : 12,
+                "sizeUnit" : "px",
+                "family" : null,
+                "weight" : null,
+                "style" : null,
+                "lineHeight" : "1"
+              },
+              "color" : null
+            },
+            "titleColor" : "rgba(0, 0, 0, 0.54)",
+            "enableDataExport" : false
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "2c79b9bd-ba9a-ced1-0e6b-3a12c6867123"
+        },
+        "1324a266-5642-697f-7b1e-66cd9e32ebdb" : {
+          "typeFullFqn" : "system.alarm_count",
+          "type" : "latest",
+          "sizeX" : 3.5,
+          "sizeY" : 1.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "alarmCount",
+              "name" : "",
+              "entityAliasId" : "25a1e4d9-6a0d-76a7-8f62-1db950008db4",
+              "dataKeys" : [ {
+                "name" : "count",
+                "type" : "count",
+                "label" : "count",
+                "settings" : { },
+                "_hash" : 0.938679117436884
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ],
+                "severityList" : [ "CRITICAL", "MAJOR", "MINOR", "WARNING" ],
+                "assignedToCurrentUser" : false,
+                "assigneeId" : null
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1755479774772,
+                  "endTimeMs" : 1755566174772
+                },
+                "quickInterval" : "CURRENT_DAY",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideFixedInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "showLabel" : true,
+              "label" : "Alarms",
+              "labelFont" : {
+                "size" : 20,
+                "sizeUnit" : "px",
+                "family" : "Roboto",
+                "weight" : "400",
+                "style" : "normal",
+                "lineHeight" : "16px"
+              },
+              "labelColor" : {
+                "type" : "constant",
+                "color" : "rgba(0, 0, 0, 0.54)",
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "showIcon" : true,
+              "iconSize" : 20,
+              "iconSizeUnit" : "px",
+              "icon" : "warning",
+              "iconColor" : {
+                "type" : "constant",
+                "color" : "rgba(255, 255, 255, 1)",
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "showIconBackground" : true,
+              "iconBackgroundSize" : 36,
+              "iconBackgroundSizeUnit" : "px",
+              "iconBackgroundColor" : {
+                "type" : "range",
+                "color" : "rgba(0, 105, 92, 1)",
+                "rangeList" : {
+                  "advancedMode" : false,
+                  "range" : [ {
+                    "from" : 0,
+                    "to" : 0,
+                    "color" : "rgba(0, 105, 92, 1)"
+                  }, {
+                    "from" : 1,
+                    "to" : null,
+                    "color" : "rgba(209, 39, 48, 1)"
+                  } ]
+                },
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "valueFont" : {
+                "size" : 20,
+                "sizeUnit" : "px",
+                "family" : "Roboto",
+                "weight" : "500",
+                "style" : "normal",
+                "lineHeight" : "24px"
+              },
+              "valueColor" : {
+                "type" : "constant",
+                "color" : "rgba(0, 0, 0, 0.87)",
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "showChevron" : false,
+              "chevronSize" : 24,
+              "chevronSizeUnit" : "px",
+              "chevronColor" : "rgba(0, 0, 0, 0.38)",
+              "layout" : "column",
+              "autoScale" : true
+            },
+            "title" : "Alarm count",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "units" : "",
+            "decimals" : null,
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "configMode" : "basic",
+            "displayTimewindow" : true,
+            "margin" : "0px",
+            "borderRadius" : "0px",
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "titleFont" : {
+              "size" : 12,
+              "sizeUnit" : "px",
+              "family" : null,
+              "weight" : null,
+              "style" : null,
+              "lineHeight" : "1"
+            },
+            "titleIcon" : "",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "14px",
+            "timewindowStyle" : {
+              "showIcon" : true,
+              "iconSize" : "14px",
+              "icon" : "query_builder",
+              "iconPosition" : "left",
+              "font" : {
+                "size" : 12,
+                "sizeUnit" : "px",
+                "family" : null,
+                "weight" : null,
+                "style" : null,
+                "lineHeight" : "1"
+              },
+              "color" : null
+            },
+            "titleColor" : "rgba(0, 0, 0, 0.54)",
+            "enableDataExport" : false
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "1324a266-5642-697f-7b1e-66cd9e32ebdb"
         }
       },
       "states" : {
@@ -4129,18 +4964,6 @@
                   "mobileHeight" : null,
                   "row" : 0,
                   "col" : 12
-                },
-                "f60fa095-2869-7a66-fa21-55d3b3b557d4" : {
-                  "sizeX" : 3,
-                  "sizeY" : 3,
-                  "row" : 9,
-                  "col" : 9
-                },
-                "01b8e337-6bd5-775d-0906-41a3c9e01222" : {
-                  "sizeX" : 3,
-                  "sizeY" : 3,
-                  "row" : 9,
-                  "col" : 6
                 },
                 "1b158044-ca8b-edd4-7392-e4f87114c3e3" : {
                   "sizeX" : 3,
@@ -4178,23 +5001,35 @@
                   "row" : 12,
                   "col" : 0
                 },
-                "7845253c-d319-972e-0bd6-6f32b08d9c72" : {
-                  "sizeX" : 3,
-                  "sizeY" : 3,
-                  "row" : 9,
-                  "col" : 21
-                },
-                "5a45960a-10fa-9472-fdcb-81caabb93ef9" : {
-                  "sizeX" : 3,
-                  "sizeY" : 3,
-                  "row" : 9,
-                  "col" : 18
-                },
                 "cbda8bcc-0b7f-5b79-8a51-ecfd7c5cef8b" : {
                   "sizeX" : 12,
                   "sizeY" : 2,
                   "row" : 7,
                   "col" : 12
+                },
+                "3ee5732a-84ae-4802-f03e-cd0a2811737c" : {
+                  "sizeX" : 3,
+                  "sizeY" : 3,
+                  "row" : 9,
+                  "col" : 9
+                },
+                "8167e30d-754c-c52a-6257-f60824542c77" : {
+                  "sizeX" : 3,
+                  "sizeY" : 3,
+                  "row" : 9,
+                  "col" : 21
+                },
+                "45e71af4-60ea-46e7-8253-afc4f5604b03" : {
+                  "sizeX" : 3,
+                  "sizeY" : 3,
+                  "row" : 9,
+                  "col" : 6
+                },
+                "7d7eca3b-9e85-8bce-7adc-17c8389704e7" : {
+                  "sizeX" : 3,
+                  "sizeY" : 3,
+                  "row" : 9,
+                  "col" : 18
                 }
               },
               "gridSettings" : {
@@ -4244,18 +5079,6 @@
                       "row" : 20,
                       "col" : 0
                     },
-                    "f60fa095-2869-7a66-fa21-55d3b3b557d4" : {
-                      "sizeX" : 5,
-                      "sizeY" : 5,
-                      "row" : 15,
-                      "col" : 15
-                    },
-                    "01b8e337-6bd5-775d-0906-41a3c9e01222" : {
-                      "sizeX" : 5,
-                      "sizeY" : 5,
-                      "row" : 15,
-                      "col" : 10
-                    },
                     "1b158044-ca8b-edd4-7392-e4f87114c3e3" : {
                       "sizeX" : 5,
                       "sizeY" : 5,
@@ -4280,35 +5103,47 @@
                       "row" : 34,
                       "col" : 5
                     },
-                    "31a142f9-158d-3d65-faae-7e8ac93c44f0" : {
-                      "sizeX" : 4,
-                      "sizeY" : 5,
-                      "row" : 15,
-                      "col" : 20
-                    },
-                    "c0988b2d-1ec7-36c5-f8fa-4106d634a595" : {
-                      "sizeX" : 4,
-                      "sizeY" : 5,
-                      "row" : 34,
-                      "col" : 20
-                    },
                     "ffba74b5-e780-b0cb-1cdd-4115f62fc3ba" : {
                       "sizeX" : 24,
                       "sizeY" : 16,
                       "row" : 39,
                       "col" : 0
                     },
-                    "7845253c-d319-972e-0bd6-6f32b08d9c72" : {
+                    "394fa58d-dcf3-8e1a-1726-a4bc15c36e6a" : {
+                      "sizeX" : 5,
+                      "sizeY" : 5,
+                      "row" : 15,
+                      "col" : 10
+                    },
+                    "e93b7481-b913-52fe-4886-7fe00004260e" : {
+                      "sizeX" : 5,
+                      "sizeY" : 5,
+                      "row" : 34,
+                      "col" : 10
+                    },
+                    "5e1792b6-f0cd-dcca-e05c-26a552d65718" : {
+                      "sizeX" : 5,
+                      "sizeY" : 5,
+                      "row" : 15,
+                      "col" : 15
+                    },
+                    "20bc8119-ec21-1a6b-08c2-c7f3d5628f07" : {
                       "sizeX" : 5,
                       "sizeY" : 5,
                       "row" : 34,
                       "col" : 15
                     },
-                    "5a45960a-10fa-9472-fdcb-81caabb93ef9" : {
-                      "sizeX" : 5,
+                    "2c79b9bd-ba9a-ced1-0e6b-3a12c6867123" : {
+                      "sizeX" : 4,
+                      "sizeY" : 5,
+                      "row" : 15,
+                      "col" : 20
+                    },
+                    "1324a266-5642-697f-7b1e-66cd9e32ebdb" : {
+                      "sizeX" : 4,
                       "sizeY" : 5,
                       "row" : 34,
-                      "col" : 10
+                      "col" : 20
                     }
                   }
                 },
@@ -4334,18 +5169,6 @@
                       "sizeY" : 31,
                       "mobileHeight" : null,
                       "row" : 64,
-                      "col" : 0
-                    },
-                    "f60fa095-2869-7a66-fa21-55d3b3b557d4" : {
-                      "sizeX" : 14,
-                      "sizeY" : 13,
-                      "row" : 49,
-                      "col" : 14
-                    },
-                    "01b8e337-6bd5-775d-0906-41a3c9e01222" : {
-                      "sizeX" : 14,
-                      "sizeY" : 13,
-                      "row" : 49,
                       "col" : 0
                     },
                     "1b158044-ca8b-edd4-7392-e4f87114c3e3" : {
@@ -4384,18 +5207,6 @@
                       "row" : 129,
                       "col" : 0
                     },
-                    "7845253c-d319-972e-0bd6-6f32b08d9c72" : {
-                      "sizeX" : 14,
-                      "sizeY" : 13,
-                      "row" : 114,
-                      "col" : 14
-                    },
-                    "3e62c42b-9e4c-f1dc-3ada-46254da9e1b4" : {
-                      "sizeX" : 14,
-                      "sizeY" : 13,
-                      "row" : 114,
-                      "col" : 0
-                    },
                     "a610b517-47fa-59cb-7963-bb03c0014f83" : {
                       "sizeX" : 28,
                       "sizeY" : 5,
@@ -4408,6 +5219,30 @@
                       "mobileHeight" : null,
                       "row" : 0,
                       "col" : 0
+                    },
+                    "c5037ae6-a265-3916-d84f-efa4ade4d961" : {
+                      "sizeX" : 14,
+                      "sizeY" : 13,
+                      "row" : 49,
+                      "col" : 0
+                    },
+                    "aaa9250d-46e9-6c49-273a-566e87d1ce08" : {
+                      "sizeX" : 14,
+                      "sizeY" : 13,
+                      "row" : 114,
+                      "col" : 0
+                    },
+                    "1042a0f6-6042-36a5-ea7e-8b6f0c5b4a64" : {
+                      "sizeX" : 14,
+                      "sizeY" : 13,
+                      "row" : 49,
+                      "col" : 14
+                    },
+                    "f044a29a-6119-9a63-c15d-c10fa63e0c24" : {
+                      "sizeX" : 14,
+                      "sizeY" : 13,
+                      "row" : 114,
+                      "col" : 14
                     }
                   }
                 }
