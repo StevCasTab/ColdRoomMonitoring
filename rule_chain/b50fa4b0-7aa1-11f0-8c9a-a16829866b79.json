@@ -107,7 +107,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
-        "alarmDetailsBuildTbel" : "var details = {};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = 'Temperature exceeds 8°: ' + msg.temperature + \"°\";\n\nreturn details;",
         "useMessageAlarmData" : false,
         "overwriteAlarmDetails" : false,
         "alarmType" : "Temperature High",
@@ -187,7 +187,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
-        "alarmDetailsBuildTbel" : "var details = {};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = 'Humidity exceeds 85%: ' + msg.humidity + \"%\";\n\n\nreturn details;",
         "useMessageAlarmData" : false,
         "overwriteAlarmDetails" : false,
         "alarmType" : "Humidity High",
@@ -291,7 +291,7 @@
       "createdTime" : 0,
       "debugSettings" : {
         "allEnabled" : false,
-        "allEnabledUntil" : 1755352757666,
+        "allEnabledUntil" : 1755360204578,
         "failuresEnabled" : false
       },
       "externalId" : null,
@@ -319,7 +319,7 @@
       "createdTime" : 0,
       "debugSettings" : {
         "allEnabled" : false,
-        "allEnabledUntil" : 1755359663436,
+        "allEnabledUntil" : 1755567748791,
         "failuresEnabled" : false
       },
       "externalId" : null,
@@ -363,13 +363,13 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1277,
-        "layoutY" : 414
+        "layoutX" : 1289,
+        "layoutY" : 415
       },
       "configuration" : {
-        "scriptLang" : "TBEL",
-        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
-        "alarmDetailsBuildTbel" : "var details = {};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "scriptLang" : "JS",
+        "alarmDetailsBuildJs" : "var firstTime = new Date(+metadata.ss_timestamp);\nvar currentDate = new Date();\n\nvar currentHours = currentDate.getHours() < 10 ? \"0\" + currentDate.getHours() : currentDate.getHours();\nvar currentMinutes = currentDate.getMinutes() < 10 ? \"0\" + currentDate.getMinutes() : currentDate.getMinutes();\nvar currentSeconds = currentDate.getSeconds() < 10 ? \"0\" + currentDate.getSeconds() : currentDate.getSeconds();\n\nvar firstHours = firstTime.getHours() < 10 ? \"0\" + firstTime.getHours() : firstTime.getHours();\nvar firstMinutes= firstTime.getMinutes() < 10 ? \"0\" + firstTime.getMinutes() : firstTime.getMinutes();\nvar firstSeconds = firstTime.getSeconds() < 10 ? \"0\" + firstTime.getSeconds() : firstTime.getSeconds();\n\n\nvar formattedFirst = firstHours + \":\" + firstMinutes + \":\" + firstSeconds;\nvar formattedCurrent = currentHours + \":\" + currentMinutes + \":\" + currentSeconds;\n\nvar details = {\"Date\" : currentDate, \"Details\" : \"Door has been left open from \" + formattedFirst + \" to \" + formattedCurrent};\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "",
         "useMessageAlarmData" : false,
         "overwriteAlarmDetails" : false,
         "alarmType" : "Door Left Open",
@@ -383,7 +383,11 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugSettings" : null,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1755567810206,
+        "failuresEnabled" : false
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -456,5 +460,8 @@
       "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
     } ],
     "ruleChainConnections" : null
+  },
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
   }
 }
